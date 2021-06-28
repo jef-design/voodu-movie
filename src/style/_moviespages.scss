@@ -1,0 +1,28 @@
+// PAGES FOR POPULAR
+.movies__pages__section {
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 7rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    .tabs {
+        .tabs__container {
+            display: flex;
+            padding: 20px 0px;
+            li {
+                border: 1px solid var(--textPrimaryColor);
+                border-radius: 25px;
+                margin-right: 5px;
+                padding: 4px 7px;
+                font-size: .9rem;
+                &:visited {
+                    color: rgb(26,92,255);
+                }
+                &:hover{
+                    border-color: #ffff;
+                    transition: .2s ease-in-out;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.search__section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 7rem;
+
+    .search__results{
+        margin-bottom: 18px;
+        padding: 10px;
+        h1 {
+            font-size: 1.3rem;
+           
+           
+        }
+        p{
+            color: var(--textPrimaryColor);
+        }
+    }
+    .search__movie__container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 1.2rem;
+        row-gap: 1.2rem;
+        @media screen and (max-width: 950px) {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        @media screen and (max-width: 836px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @media screen and (max-width: 474px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media screen and (max-width: 379px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

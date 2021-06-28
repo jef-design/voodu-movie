@@ -1,0 +1,50 @@
+.person {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 7rem;
+    @media screen and (max-width: 689px) {
+        flex-direction: column;
+        
+    }
+    .peron__img{
+        margin-right: 5rem;
+        @media screen and (max-width: 689px) {
+            display: flex;
+            justify-content: center;
+            margin-right: 0;
+            margin-bottom: 20px;
+            
+        }
+        border-radius: 8px;
+        img{
+            min-width: 250px;
+            max-height: 300px;
+            border-radius: 5px;
+        }
+        
+    }
+    .person__info{
+        margin-bottom: 20px;
+        margin-top: 20px;
+       color: var(--textYellowColor);
+    }
+    .person__details{
+        h2{
+            @media screen and (max-width: 689px) {
+                text-align: center;
+                
+            }
+           
+        }
+    }
+}
+.person__movies{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 5%;
+}
