@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import StarRatingComponent from "react-star-rating-component";
 import AlternativeImage from "./images/AlternativeImage";
 import { useParams } from "react-router-dom";
 
@@ -8,13 +7,13 @@ function SeasonCard({
     season_number,
     name,
     poster_path,
+    i
 }) {
     const POSTERPATH_URL = `https://image.tmdb.org/t/p/w500/`;
     const { id } = useParams();
 
-
     return (
-        <React.Fragment>
+        <React.Fragment key={i}>
             <Link
                 to={`/tvinfo/${id}/episode/${season_number}`}
             >

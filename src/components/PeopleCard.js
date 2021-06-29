@@ -2,10 +2,10 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import NoPortrait from "./images/NoPortrait";
 
-function PeopleCard({id,index, profile_path, name,character}) {
+function PeopleCard({id,i, profile_path, name,character}) {
     const POSTERPATH_URL = `https://image.tmdb.org/t/p/w500/`;
     return (
-        <React.Fragment key={index}>
+        <React.Fragment key={i}>
                 <Link to={`/person/${id}`}>
                 <div  className="cast__container">
                     

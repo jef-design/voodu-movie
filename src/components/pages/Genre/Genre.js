@@ -9,7 +9,7 @@ function Genre() {
     const genre = useSelector(state => state.genreReducer.genreList);
     useEffect(() => {
         dispatch(fetchGenreList());
-    }, []);
+    }, [dispatch]);
     return (
         <div className="genre-grid">
             {genre.map((g, index) => {

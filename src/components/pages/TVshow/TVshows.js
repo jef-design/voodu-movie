@@ -6,20 +6,16 @@ import TVshowCard from "../../TVshowCard";
 function TVshows() {
     const popular = useSelector(state => state.fetchmovies.Ptvshow);
     const dispatch = useDispatch();
-
-    console.log("popular mobe", popular);
     useEffect(() => {
         dispatch(fetchPopularTvShow());
-    }, []);
+    }, [dispatch]);
     return (
             <div className="movies__container">
                 {popular.map((movie, index) => {
                     const {
                         id,
                         poster_path,
-                        title,
                         vote_average,
-                        release_date,
                         first_air_date,
                         name,
                     } = movie;

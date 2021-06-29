@@ -9,7 +9,7 @@ function Search() {
     const [isOpen, setIsOpen] = useState(false);
     const history = useHistory();
     const dispatch = useDispatch();
-    const searchInputRef = (useRef < HTMLInputElement) | (null > null);
+    const searchInputRef = useRef();
 
     const searchInputHandler = e => {
         setSearchInput(e.target.value);

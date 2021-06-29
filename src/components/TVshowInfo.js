@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from "react-redux";
 import StarRatingComponent from "react-star-rating-component";
 import ReactPlayer from "react-player";
 import PeopleCard from "./PeopleCard";
-import Modal from "react-modal";
 import TVshowCard from "./TVshowCard";
 import SeasonCard from "./SeasonCard";
 
@@ -27,26 +26,6 @@ function TVshowInfo() {
     const BACKDROP_URL = `https://image.tmdb.org/t/p/original/`;
     const YT_URL = `https://www.youtube.com/watch?v=`;
 
-    //modal
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-    const customStyles = {
-        content: {
-            position: "fixed",
-            top: "0",
-            left: "0",
-            right: "0",
-            bottom: "0",
-            zIndex: "8",
-            padding: "0",
-            overflow: "hidden",
-        },
-    };
-    function openModal() {
-        setIsOpen(true);
-    }
-    function closeModal() {
-        setIsOpen(false);
-    }
 
     useEffect(() => {
         dispatch(selectedTVShow(id));
@@ -74,12 +53,12 @@ function TVshowInfo() {
         );
     });
     // console.log("casts", casts)
-    const TVCast = fullcasts.map((c, index) => {
+    const TVCast = fullcasts.map((c, i) => {
         const { id, profile_path, name, character } = c;
         return (
             <PeopleCard
+                key={i}
                 id={id}
-                S
                 profile_path={profile_path}
                 name={name}
                 character={character}
@@ -143,10 +122,11 @@ function TVshowInfo() {
                                     <p className="movie__info__sub">{number_of_seasons} SEASONS</p>
                                     <div className="tv__seasons__slider">
                                         <div className="tv__slider__wrapper">
-                                            {seasons.map(season => {
+                                            {seasons.map((season,i) => {
                                                 const {poster_path, name,season_number} = season
                                                 return (
                                                     <SeasonCard
+                                                    key={i}
                                                     poster_path={poster_path}
                                                     name={name}
                                                     season_number={season_number}

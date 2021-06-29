@@ -13,11 +13,11 @@ function People() {
     useEffect(() => {
         dispatch(fetchPopularPeople(page));
         setPage(page => page + 1);
-    }, [dispatch]);
-    const fetchData = () => {
-        dispatch(fetchPopularPeople(page));
-        setPage(page => page + 1);
-    };
+    }, [dispatch,page]);
+    // const fetchData = () => {
+    //     dispatch(fetchPopularPeople(page));
+    //     setPage(page => page + 1);
+    // };
     if(popularpeople.loading){
         console.log(popularpeople.loading)
               return <p>loading.....</p>

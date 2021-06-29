@@ -12,7 +12,6 @@ import StarRatingComponent from "react-star-rating-component";
 import ReactPlayer from "react-player";
 import MovieCard from "./MovieCard";
 import PeopleCard from "./PeopleCard";
-import { Link } from "react-router-dom";
 import Modal from "react-modal";
 
 function MovieInfo() {
@@ -74,10 +73,11 @@ function MovieInfo() {
         );
     });
     // console.log("casts", casts)
-    const MovieCast = fullcasts.map((c, index) => {
+    const MovieCast = fullcasts.map((c, i) => {
         const { id, profile_path, name, character } = c;
         return (
             <PeopleCard
+                key={i}
                 id={id}
                 profile_path={profile_path}
                 name={name}

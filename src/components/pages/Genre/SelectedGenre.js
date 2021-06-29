@@ -13,7 +13,7 @@ function SelectedGenre() {
     // console.log("GENRE mobe", popular);
     useEffect(() => {
         dispatch(fetchGenre(id,name));
-    }, [dispatch]);
+    }, [dispatch,id,name]);
     return (
   
             <div className="movies__container">

@@ -7,7 +7,6 @@ import Modal from "react-modal";
 function Episodes() {
     const { seasonnumber } = useParams();
     const {id} = useParams();
-    console.log(id)
     const dispatch = useDispatch();
     const episodes = useSelector(state => state.fetchTVShows.episodes);
     const POSTERPATH_URL = `https://image.tmdb.org/t/p/w500/`;
@@ -34,7 +33,7 @@ function Episodes() {
     }
     useEffect(() => {
         dispatch(fetchEpisodes(seasonnumber,id));
-    }, []);
+    }, [dispatch,seasonnumber,id]);
 
     return (
         <div className="episode__wrapper">
@@ -42,7 +41,7 @@ function Episodes() {
             {episodes.map((e, i) => {
                 const { episode_number, name, overview, still_path } = e;
                 return (
-                    <div className="episode__container">
+                    <div className="episode__container" key={i}>
                         <div className="episode__stillpath">
                             <img src={POSTERPATH_URL + still_path} alt={name} />
                             <i
@@ -67,6 +66,7 @@ function Episodes() {
                         </Modal>
                         <div>
                             <h3>Episode {episode_number}</h3>
+                            <h4>{name}</h4>
                             <p>{overview}</p>
                         </div>
                     </div>
