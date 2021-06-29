@@ -12,10 +12,7 @@ function Episodes() {
     const { id } = useParams();
     const dispatch = useDispatch();
     const episodes = useSelector(state => state.fetchTVShows.episodes);
-    const episodesno = useSelector(state => state.fetchTVShows.episodes.episodes);
-    console.log(episodesno)
-    const POSTERPATH_URL = `https://image.tmdb.org/t/p/w500/`;
-    console.log("episodes", episodes);
+    // console.log("episodes", episodes);
 
     
     useEffect(() => {
