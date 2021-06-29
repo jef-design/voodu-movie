@@ -232,7 +232,8 @@ iframe {
     margin-top: 5rem;
     .episode__container {
         display: flex;
-        margin-bottom: 20px;
+        align-items: center;
+        margin-bottom: 30px;
         .episode__stillpath {
             position: relative;
             width: 100%;

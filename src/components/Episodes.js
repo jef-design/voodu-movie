@@ -21,8 +21,8 @@ function Episodes() {
 
     return (
         <div className="episode__wrapper">
-            {episodes.name}
-            {episodes.episodes.map((e, i) => {
+            {/* <h1>{episodes.name}</h1> */}
+            {episodes.map((e, i) => {
                 const {
                     season_number,
                     episode_number,
@@ -34,7 +34,7 @@ function Episodes() {
                     <EpisodeCard
                     id={id}
                     key={i}
-                    season_number={seasonnumber}
+                    season_number={season_number}
                     episode_number={episode_number}
                     name={name}
                     overview={overview}
