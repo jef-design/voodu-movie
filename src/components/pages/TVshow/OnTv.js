@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchOnTV } from "../../../redux/action/tvshowAction";
-import MovieCard from "../../MovieCard";
+import TVshowCard from "../../TVshowCard";
 
 function OnTv() {
     const ontv = useSelector(state => state.fetchTVShows.ontv);
@@ -25,7 +25,7 @@ function OnTv() {
                         first_air_date
                     } = movie;
                     return (
-                        <MovieCard
+                        <TVshowCard
                             id={id}
                             key={index}
                             name={name}

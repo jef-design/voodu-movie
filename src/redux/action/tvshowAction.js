@@ -32,3 +32,55 @@ export const fetchOnTV = () =>{
     }
  
  }
+
+ export const selectedTVShow = (id) =>{
+   return async function(dispatch) {
+    const response = await axios.get(`/tv/${id}?api_key=${API_KEY}`)
+    dispatch({type: ActionTypes.SELECTED_TVSHOW,
+        payload: response.data})
+   }
+
+}
+export const removeSelectedTV = () =>{
+   return{
+      type: ActionTypes.REMOVE_SELECTED_TV,
+      // payload: text
+  }
+
+}
+export const fetchTVTrailer = (id) =>{
+   return async function(dispatch) {
+    const response = await axios.get(`/tv/${id}/videos?api_key=${API_KEY}`)
+   //  console.log(response.data.results)
+    dispatch({type: ActionTypes.FETCH_TV_TRAILER,
+        payload: response.data.results})
+   }
+   
+}
+export const fetchCastTV = (id) =>{
+   return async function(dispatch) {
+    const response = await axios.get(`/tv/${id}/credits?api_key=${API_KEY}`)
+   //  console.log(response.data.cast)
+    dispatch({type: ActionTypes.FETCH_CAST_TV,
+        payload: response.data.cast})
+   }
+   
+}
+export const fetchSimilarTV = (id) =>{
+   return async function(dispatch) {
+    const response = await axios.get(`/tv/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`)
+    
+    dispatch({type: ActionTypes.FETCH_SIMILAR_TV,
+        payload: response.data.results})
+   }
+
+}
+export const fetchEpisodes = (seasonnumber,id) =>{
+   return async function(dispatch) {
+    const response = await axios.get(`/tv/${id}/season/${seasonnumber}}?api_key=${API_KEY}&language=en-US`)
+    console.log(response.data.episodes)
+    dispatch({type: ActionTypes.FETCH_EPISODES,
+        payload: response.data.episodes})
+   }
+
+}

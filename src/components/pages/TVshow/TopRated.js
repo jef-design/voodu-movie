@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {fetchTopRatedTVshow } from "../../../redux/action/tvshowAction";
-import MovieCard from "../../MovieCard";
+import TVshowCard from "../../TVshowCard";
 
 function TopRated() {
     const toprated = useSelector(state => state.fetchTVShows.topratedTV);
@@ -25,7 +25,7 @@ function TopRated() {
                         first_air_date
                     } = movie;
                     return (
-                        <MovieCard
+                        <TVshowCard
                             id={id}
                             key={index}
                             name={name}

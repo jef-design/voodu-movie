@@ -33,6 +33,9 @@ const movieReducer = (state = defaultState, { type, payload }) => {
         case ActionTypes.FETCH_SIMILAR_MOVIES:
             return { ...state, 
                 SMmovies: payload };
+         case ActionTypes.FETCH_SIMILAR_TV:
+                return { ...state, 
+                        SMmovies: payload };
         case ActionTypes.FETCH_POPULAR_PEOPLE:
             return { ...state,
                  popularpeople: payload, 

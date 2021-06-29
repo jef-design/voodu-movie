@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPopularTvShow } from '../../../redux/action/movieAction';
-import MovieCard from "../../MovieCard";
+import TVshowCard from "../../TVshowCard";
 
 function TVshows() {
     const popular = useSelector(state => state.fetchmovies.Ptvshow);
@@ -24,14 +24,12 @@ function TVshows() {
                         name,
                     } = movie;
                     return (
-                        <MovieCard
+                        <TVshowCard
                             id={id}
                             key={index}
-                            title={title}
                             name={name}
                             first_air_date={first_air_date}
                             poster_path={poster_path}
-                            release_date={release_date}
                             vote_average={vote_average}
                         />
                     );

@@ -7,7 +7,9 @@ const defaultState = {
 const castReducer = (state = defaultState, {type, payload}) => {
     switch (type) {  
         case ActionTypes.FETCH_CAST:
-            return {...state, casts: payload} 
+            return {...state, casts: payload}
+            case ActionTypes.FETCH_CAST_TV:
+                return {...state, casts: payload} 
          default:
             return state;
     }

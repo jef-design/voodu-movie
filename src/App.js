@@ -10,8 +10,8 @@ import TVshows from "./components/pages/TVshow/TVshows";
 import Peoples from "./components/pages/Peoples";
 import MoviesContainer from "./components/pages/Movies/MoviesContainer";
 import TvShowContainer from './components/pages/TVshow/TvShowContainer'
-import TopRated from "./components/pages/Movies/TopRated";
-import Upcoming from "./components/pages/Movies/Upcoming";
+import TVshowInfo from "./components/TVshowInfo";
+import Episodes from "./components/Episodes";
 
 
 
@@ -24,11 +24,11 @@ function App() {
                     <Route exact path="/" component={Home} />
                     <Route path="/movie/" component={MoviesContainer} />
                     <Route path="/tv/" component={TvShowContainer} />
-                    {/* <Router path="/movie/toprated" component={TopRated} /> */}
-                    {/* <Route  path="/movie/upcoming" component={Upcoming} /> */}
                     <Route path="/tvshows" component={TVshows} />
                     <Route path="/people" component={Peoples} />
                     <Route exact path="/movieinfo/:id" component={MovieInfo} />
+                    <Route exact path="/tvinfo/:id" component={TVshowInfo} />
+                    <Route exact path="/tvinfo/:id/episode/:seasonnumber/" component={Episodes} />
                     <Route path="/results/" component={SearchResults} />
                     <Route path="/person/:id" component={People} />
                 </Switch>
