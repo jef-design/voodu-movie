@@ -77,10 +77,10 @@ export const fetchSimilarTV = (id) =>{
 }
 export const fetchEpisodes = (seasonnumber,id) =>{
    return async function(dispatch) {
-    const response = await axios.get(`/tv/${id}/season/${seasonnumber}}?api_key=${API_KEY}&language=en-US`)
-    console.log(response.data.episodes)
+    const response = await axios.get(`/tv/${id}/season/${seasonnumber}?api_key=${API_KEY}&language=en-US`)
+    console.log(response.data)
     dispatch({type: ActionTypes.FETCH_EPISODES,
-        payload: response.data.episodes})
+        payload: response.data})
    }
 
 }
