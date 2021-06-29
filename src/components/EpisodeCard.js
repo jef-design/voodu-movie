@@ -52,6 +52,9 @@ function EpisodeCard({
                 style={customStyles}
                 contentLabel="Example Modal"
             >
+                <button className="modal__close" onClick={closeModal}>
+                                            close
+                                        </button>
                 <iframe
                     className="iframe__wrapper"
                     src={` https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=${season_number}&e=${episode_number}`}

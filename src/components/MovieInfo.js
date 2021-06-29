@@ -29,7 +29,6 @@ function MovieInfo() {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const customStyles = {
         content: {
-            
             position: "fixed",
             zIndex: "50000",
             top: "0",
@@ -40,12 +39,17 @@ function MovieInfo() {
             overflow: "hidden",
         },
     };
+
     function openModal() {
         setIsOpen(true);
     }
     function closeModal() {
         setIsOpen(false);
     }
+    function afterOpenModal() {
+        // references are now sync'd and can be accessed.
+        // subtitle.style.color = '#f00';
+      }
 
     useEffect(() => {
         dispatch(selectedMovie(id));
@@ -147,12 +151,12 @@ function MovieInfo() {
                                         isOpen={modalIsOpen}
                                         onRequestClose={closeModal}
                                         style={customStyles}
-                                        contentLabel="Example Modal"
+                                      
                                     >
-                                        
-                                        {/* <button onClick={closeModal}>
+                                        {/* <h2 ref={(_subtitle) => (subtitle = subtitle)}>Hello</h2> */}
+                                        <button className="modal__close" onClick={closeModal}>
                                             close
-                                        </button> */}
+                                        </button>
                                        <iframe className="iframe__wrapper" src={`https://www.2embed.ru/embed/tmdb/movie?id=${id}`} frameborder="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
                                        
                                     </Modal>

@@ -7,7 +7,7 @@
     top: 0;
     right: 0;
     left: 0;
-    z-index: 2;
+    z-index: 1;
     background: -webkit-linear-gradient(
         180deg,
         rgba(167, 64, 64, 0.224) 0%,
@@ -112,7 +112,7 @@
                 height: 100vh;
                 padding: 20px;
                 text-align: right;
-                // z-index: ;
+                z-index: 60000;
                 transition: 0.2s ease;
             }
         }

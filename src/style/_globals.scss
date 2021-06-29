@@ -67,3 +67,31 @@ ul{
 .noportrait{
     height: 150px;
 }
+body.ReactModal__Body--open{
+    &::-webkit-scrollbar {
+        display: none;
+      }
+}
+body.ReactModal__Overlay.React{
+    position: unset;
+}
+body.ReactModal__Overlay--after-open{
+    position: unset;
+}
+body.ReactModal__Overlay{
+    position: unset;
+}
+.ReactModal__Overlay {
+    opacity: 0;
+    
+  }
+  
+  .ReactModal__Overlay--after-open {
+    opacity: 1;
+    transition: opacity 80ms ease-in-out;
+    position: unset!important;
+  }
+  
+  .ReactModal__Overlay--before-close {
+    opacity: 0;
+  }
