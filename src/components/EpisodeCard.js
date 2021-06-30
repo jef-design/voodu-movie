@@ -42,7 +42,7 @@ function EpisodeCard({
                 ></i>
             </div>
             <div>
-                <h3>Episode {episode_number}</h3>
+                <h3>S0{season_number} : E0{episode_number}</h3>
                 <h4>{name}</h4>
                 <p>{overview}</p>
             </div>

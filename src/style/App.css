@@ -836,10 +836,18 @@ body.ReactModal__Overlay {
   margin-bottom: 30px;
 }
 
+@media screen and (max-width: 887px) {
+  .episode__wrapper .episode__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .episode__wrapper .episode__container .episode__stillpath {
   position: relative;
-  width: 100%;
-  max-width: 250px;
+  max-width: 200px;
   height: 180px;
   margin-right: 20px;
 }
@@ -863,6 +871,14 @@ body.ReactModal__Overlay {
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
+}
+
+@media screen and (max-width: 887px) {
+  .episode__wrapper .episode__container .episode__stillpath {
+    max-width: 100%;
+    height: 100%;
+    margin-right: 0;
+  }
 }
 
 .movie__info__wrapper {

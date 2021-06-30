@@ -21,7 +21,7 @@ function Episodes() {
 
     return (
         <div className="episode__wrapper">
-            <h1>Season</h1>
+            {/* <h1>Season</h1> */}
             {episodes.map((e, i) => {
                 const {
                     season_number,
