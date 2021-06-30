@@ -27,7 +27,7 @@ function App() {
                     <Route path="/tvshows" component={TVshows} />
                     <Route path="/people" component={Peoples} />
                     <Route exact path="/movieinfo/:id" component={MovieInfo} />
-                    <Route exact path="/tvinfo/:id/episode/:seasonnumber/" component={Episodes} />
+                    <Route exact path="/episode/:seasonnumber/" component={Episodes} />
                     <Route exact path="/tvinfo/:id" component={TVshowInfo} />
                     <Route path="/results/" component={SearchResults} />
                     <Route path="/person/:id" component={People} />
