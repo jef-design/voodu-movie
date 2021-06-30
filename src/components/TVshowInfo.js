@@ -13,6 +13,7 @@ import ReactPlayer from "react-player";
 import PeopleCard from "./PeopleCard";
 import TVshowCard from "./TVshowCard";
 import SeasonCard from "./SeasonCard";
+import { Helmet } from "react-helmet";
 
 
 function TVshowInfo() {
@@ -102,6 +103,9 @@ function TVshowInfo() {
                 };
                 return (
                     <section key={i}>
+                         <Helmet>
+                            <title>{`${name} (${CurrentYear})`} | Voodu</title>
+                        </Helmet>
                         <div className="movie__info__backdrop">
                             <img
                                 src={BACKDROP_URL + backdrop_path}

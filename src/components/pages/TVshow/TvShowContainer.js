@@ -6,13 +6,16 @@ import OnTv from './OnTv'
 import TabsTv from './TabsTv'
 import { Switch, Route } from "react-router-dom";
 import Genre from "../Genre/Genre";
-import SelectedGenre from "../Genre/SelectedGenre"
+import SelectedGenre from "../Genre/SelectedGenre";
+import { Helmet } from "react-helmet";
 
 
 function MoviesContainer() {
     return (
         <section className="movies__pages__section">
-
+             <Helmet>
+                <title>Voodu | Browse TV Shows</title>
+            </Helmet>
             <div>
                 <TabsTv/>
                    <Switch>

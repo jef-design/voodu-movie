@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPopularPeople } from "../../redux/action/movieAction";
 import PeopleCard from "../PeopleCard";
+import { Helmet } from "react-helmet";
 
 
 
@@ -25,6 +26,9 @@ function People() {
 }
     return (
         <section className="movies__pages__section">
+             <Helmet>
+                <title>Voodu | Popular People</title>
+            </Helmet>
             <h1>People</h1>
             <p>{popularpeople.total_results}</p>
             

@@ -13,6 +13,8 @@ import ReactPlayer from "react-player";
 import MovieCard from "./MovieCard";
 import PeopleCard from "./PeopleCard";
 import Modal from "react-modal";
+import { Helmet } from "react-helmet";
+
 
 function MovieInfo() {
     const { id } = useParams();
@@ -105,6 +107,7 @@ function MovieInfo() {
 
     return (
         <section className="movies__section__wrapper">
+             
             {[movie].map((mov, i) => {
                 const {
                     title,
@@ -124,6 +127,9 @@ function MovieInfo() {
                 };
                 return (
                     <section key={i}>
+                    <Helmet>
+                        <title>{`${title} (${CurrentYear})`} | Voodu</title>
+                    </Helmet>
                         <div className="movie__info__backdrop">
                             <img
                                 src={BACKDROP_URL + backdrop_path}
