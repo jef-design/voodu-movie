@@ -15,7 +15,7 @@ function SeasonCard({
     return (
         <React.Fragment key={i}>
             <Link
-                to={`/episode/${season_number}`}
+                to={`/tvinfo/${id}/episode/${season_number}`}
             >
                 <div className="tv__seasons__card">
                     {poster_path ? (

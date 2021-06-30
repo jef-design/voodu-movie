@@ -5,7 +5,7 @@ const defaultState = {
     ontv: [],
     topratedTV: [],
     loading: false,
-    episodes: [],
+    // episodes: [],
 };
 
 const tvshowReducer = (state = defaultState, { type, payload }) => {
@@ -19,9 +19,6 @@ const tvshowReducer = (state = defaultState, { type, payload }) => {
         case ActionTypes.FETCH_TOPRATED_TVSHOWS:
             return { ...state, 
                 topratedTV: payload };
-                case ActionTypes.FETCH_EPISODES:
-            return { ...state, 
-                episodes: payload };
         default:
             return state;
     }

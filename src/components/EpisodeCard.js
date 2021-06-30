@@ -51,16 +51,18 @@ function EpisodeCard({
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"
+                ariaHideApp={false}
             >
                 <button className="modal__close" onClick={closeModal}>
-                                            close
-                                        </button>
+                   close
+                 </button>
                 <iframe
+                    title="stream"
                     className="iframe__wrapper"
                     src={` https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=${season_number}&e=${episode_number}`}
                     frameBorder="0"
                     scrolling="no"
-                    allowFullScreen="true"
+                    allowFullScreen={true}
                 ></iframe>
             </Modal>
         </div>

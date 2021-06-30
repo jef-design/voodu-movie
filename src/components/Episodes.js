@@ -11,7 +11,7 @@ function Episodes() {
     console.log(name);
     const { id } = useParams();
     const dispatch = useDispatch();
-    const episodes = useSelector(state => state.fetchTVShows.episodes);
+    const episodes = useSelector(state => state.episodesList.episodes);
     console.log("episodes", episodes);
 
     

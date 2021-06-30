@@ -48,10 +48,10 @@ function MovieInfo() {
     function closeModal() {
         setIsOpen(false);
     }
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        // subtitle.style.color = '#f00';
-      }
+    // function afterOpenModal() {
+    //     references are now sync'd and can be accessed.
+    //     subtitle.style.color = '#f00';
+    //   }
 
     useEffect(() => {
         dispatch(selectedMovie(id));
@@ -163,7 +163,7 @@ function MovieInfo() {
                                         <button className="modal__close" onClick={closeModal}>
                                             close
                                         </button>
-                                       <iframe className="iframe__wrapper" src={`https://www.2embed.ru/embed/tmdb/movie?id=${id}`} frameborder="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
+                                       <iframe title="stream" className="iframe__wrapper" src={`https://www.2embed.ru/embed/tmdb/movie?id=${id}`} frameBorder="0" scrolling="no" allowFullScreen={true}></iframe>
                                        
                                     </Modal>
                                 </div>
