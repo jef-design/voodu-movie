@@ -117,7 +117,7 @@ function TVshowInfo() {
                                 src={POSTERPATH_URL + poster_path}
                                 alt={name}
                             />
-                            <div>
+                            <div className="movie__info__wrapper">
                                 <h1>
                                     {name} ({CurrentYear})
                                 </h1>

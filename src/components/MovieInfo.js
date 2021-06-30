@@ -141,7 +141,7 @@ function MovieInfo() {
                                 src={POSTERPATH_URL + poster_path}
                                 alt={title}
                             />
-                            <div>
+                            <div >
                                 <h1>
                                     {title} ({CurrentYear})
                                 </h1>
