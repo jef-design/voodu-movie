@@ -499,8 +499,8 @@ body.ReactModal__Overlay {
 .movies__container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[6];
-      grid-template-columns: repeat(6, 1fr);
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
   -webkit-column-gap: 1rem;
           column-gap: 1rem;
   row-gap: 1rem;

@@ -9,6 +9,7 @@ import tvshowReducer from './tvshowReducer';
 import selectedTVReducer from './selectedTVReducer';
 import episodesReducer from './episodesReducer'
 import miscReducer from './miscReducer';
+import peopleReducer from './peopleReducer'
 
 const allreducers = combineReducers({
     fetchmovies : movieReducer,
@@ -20,7 +21,8 @@ const allreducers = combineReducers({
     fetchTVShows: tvshowReducer,
     selectedTV: selectedTVReducer,
     episodesList: episodesReducer,
-    miscLoading: miscReducer
+    miscLoading: miscReducer,
+    peopleReducer: peopleReducer,
 })
 
 export default allreducers;
