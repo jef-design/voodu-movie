@@ -1,5 +1,5 @@
 :root {
-  --primaryColor: #1b262c;
+  --primaryColor: #060d17;
   --textWhiteColor: #fff;
   --textPrimaryColor: #5a606b;
   --textYellowColor: #f4c10f;
@@ -558,7 +558,7 @@ body.ReactModal__Overlay {
   padding-top: 1rem;
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
-  background-color: #1b262c;
+  background-color: var(--primaryColor);
   color: #ffffff;
   padding: 20px 50px;
   line-height: 1.5rem;
@@ -674,7 +674,7 @@ body.ReactModal__Overlay {
   font-size: 0.8rem;
   color: #fff !important;
   background: #1a5cff;
-  padding: 5px 25px;
+  padding: 10px 25px;
   border-radius: 10px;
   border: none;
   -webkit-transition: background-color 0.1s ease;
@@ -776,7 +776,7 @@ body.ReactModal__Overlay {
 }
 
 .tv__seasons {
-  padding: 20px;
+  padding: 20px 0px;
 }
 
 .tv__seasons .tv__seasons__slider {
@@ -813,13 +813,25 @@ body.ReactModal__Overlay {
 
 .tv__seasons .tv__seasons__slider .tv__slider__wrapper .tv__seasons__card .season__card__img {
   width: 100%;
-  height: 100%;
+  height: 190px;
+  margin-bottom: 10px;
 }
 
 .tv__seasons .tv__seasons__slider .tv__slider__wrapper .tv__seasons__card .season__card__img img {
   width: 100%;
   height: 100%;
-  border-radius: 0px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 751px) {
+  .tv__seasons .tv__seasons__slider .tv__slider__wrapper .tv__seasons__card .season__card__img img {
+    margin-top: -0rem;
+  }
+}
+
+.tv__seasons .tv__seasons__slider .tv__slider__wrapper .tv__seasons__card p {
+  color: var(--textPrimaryColor);
+  font-size: .9rem;
 }
 
 .episode__wrapper {
