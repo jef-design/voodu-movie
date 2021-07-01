@@ -26,10 +26,20 @@ export const fetchNowPlayingMovies = () =>{
 }
 export const fetchPopularMovies = () =>{
    return async function(dispatch) {
-    const response = await axios.get(request.fetchPopularMovies)
-   //  console.log(response.data.results)
-    dispatch({type: ActionTypes.FETCH_POPULAR_MOVIES,
-        payload: response.data.results})
+    try {
+      dispatch({
+         type: ActionTypes.FETCH_IS_LOADING
+       });
+      const response = await axios.get(request.fetchPopularMovies)
+      //  console.log(response.data.results)
+       dispatch({type: ActionTypes.FETCH_POPULAR_MOVIES,
+           payload: response.data.results})
+      dispatch({
+            type: ActionTypes.FETCH_IS_SUCCESS
+          });
+    } catch (error) {
+       
+    }
    }
 
 }

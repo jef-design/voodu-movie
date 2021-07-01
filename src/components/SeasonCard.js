@@ -18,14 +18,17 @@ function SeasonCard({
                 to={`/tvinfo/${id}/episode/${season_number}`}
             >
                 <div className="tv__seasons__card">
-                    {poster_path ? (
+                    <div className="season__card__img">
+                        {poster_path ? (
                         <img src={POSTERPATH_URL + poster_path} alt="" />
                     ) : (
                         <AlternativeImage></AlternativeImage>
                     )}
-                   <p>{name}</p>
+                    </div>
+                    <p>{name}</p>
                    
                 </div>
+                
             </Link>
         </React.Fragment>
     );

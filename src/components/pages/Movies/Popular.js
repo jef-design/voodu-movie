@@ -5,6 +5,8 @@ import MovieCard from "../../MovieCard";
 
 function Popular() {
     const popular = useSelector(state => state.fetchmovies.Pmovies);
+    const Loading = useSelector(state => state.miscLoading.loading)
+    console.log(Loading)
     const dispatch = useDispatch();
 
     // console.log("popular mobe", popular);

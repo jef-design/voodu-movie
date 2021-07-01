@@ -10,23 +10,26 @@ const defaultState = {
     person: [],
     personmovies: [],
     popularpeople: [],
-    loading: false,
+    // loading: false,
 };
 
 const movieReducer = (state = defaultState, { type, payload }) => {
     switch (type) {
-        case ActionTypes.MOVIES_LOADING:
-            return { ...state,
-                 loading: true };
+        // case ActionTypes.FETCH_IS_LOADING:
+        //     return { ...state,
+        //          loading: true };
         case ActionTypes.FETCH_TOPRATED_MOVIES:
             return { ...state,
-                 movies: payload };
+                 movies: payload,
+                loading: false };
         case ActionTypes.FETCH_NOWPLAYING_MOVIES:
             return { ...state,
-                 NWmovies: payload };
+                 NWmovies: payload,
+                 loading: false };
         case ActionTypes.FETCH_POPULAR_MOVIES:
             return { ...state, 
-                Pmovies: payload };
+                Pmovies: payload,
+                loading: false };
         case ActionTypes.FETCH_UPCOMING_MOVIES:
             return { ...state, 
                 Umovies: payload };

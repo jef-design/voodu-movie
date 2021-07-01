@@ -147,16 +147,13 @@ function MovieInfo() {
                                 </h1>
                                 <div className="button__container">
                                     <button onClick={openModal} className="play_button">
-                                        <a
-                                            
-                                        >
                                             <i className="bx bx-play"></i>Play
-                                        </a>
                                     </button>
                                     <Modal
                                         isOpen={modalIsOpen}
                                         onRequestClose={closeModal}
                                         style={customStyles}
+                                        ariaHideApp={false}
                                       
                                     >
                                         {/* <h2 ref={(_subtitle) => (subtitle = subtitle)}>Hello</h2> */}
