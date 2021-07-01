@@ -135,6 +135,15 @@ export const fetchPersonMovies = (id) =>{
    }
    
 }
+export const fetchPersonTVShows= (id) =>{
+   return async function(dispatch) {
+    const response = await axios.get(`/person/${id}/tv_credits?api_key=${API_KEY}`)
+    console.log(response.data.cast)
+    dispatch({type: ActionTypes.FETCH_PEOPLE_TV,
+        payload: response.data.cast})
+   }
+   
+}
 
 export const searchedText = (text) =>{
    return{
