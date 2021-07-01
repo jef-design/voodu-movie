@@ -11,13 +11,13 @@ function People() {
     const POSTERPATH_URL = `https://image.tmdb.org/t/p/w500/`;
     const person = useSelector(state => state.fetchmovies.person);
     const personmovies = useSelector(state => state.fetchmovies.personmovies);
-    const persontv = useSelector(state => state.fetchmovies.persontvshows);
+    // const persontv = useSelector(state => state.fetchmovies.persontvshows);
     // console.log("person", person);
 
     useEffect(() => {
         dispatch(fetchPerson(id));
         dispatch(fetchPersonMovies(id));
-        dispatch(fetchPersonTVShows(id));
+        // dispatch(fetchPersonTVShows(id));
     }, [dispatch,id]);
 
     const PersonMovies = personmovies.map((movie, index) => {
@@ -33,19 +33,19 @@ function People() {
             />
         );
     });
-    const PersonTV = persontv.map((movie, index) => {
-        const { id, poster_path, name, vote_average, first_air_date } = movie;
-        return (
-            <TVshowCard
-                id={id}
-                key={index}
-                name={name}
-                poster_path={poster_path}
-                first_air_date={first_air_date}
-                vote_average={vote_average}
-            />
-        );
-    });
+    // const PersonTV = persontv.map((movie, index) => {
+    //     const { id, poster_path, name, vote_average, first_air_date } = movie;
+    //     return (
+    //         <TVshowCard
+    //             id={id}
+    //             key={index}
+    //             name={name}
+    //             poster_path={poster_path}
+    //             first_air_date={first_air_date}
+    //             vote_average={vote_average}
+    //         />
+    //     );
+    // });
 
     return (
         <React.Fragment>
@@ -86,8 +86,8 @@ function People() {
             <h4>ALSO KNOWN FOR </h4>
             <h1>MOVIES</h1>
             <div className="movies__container">{PersonMovies}</div>
-            <h1>TV SERIES</h1>
-            <div className="movies__container">{PersonTV}</div>
+            {/* <h1>TV SERIES</h1>
+            <div className="movies__container">{PersonTV}</div> */}
             </div>
         </React.Fragment>
     );
