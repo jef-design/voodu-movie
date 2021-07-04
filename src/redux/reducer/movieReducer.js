@@ -44,15 +44,6 @@ const movieReducer = (state = defaultState, { type, payload }) => {
             return { ...state,
                  popularpeople: payload, 
                  loading: false };
-        case ActionTypes.FETCH_PEOPLE:
-            return { ...state,
-                 person: payload };
-        case ActionTypes.FETCH_PEOPLE_MOVIES:
-            return { ...state, 
-                personmovies: payload };
-        case ActionTypes.FETCH_PEOPLE_TV:
-            return { ...state, 
-                persontvshows: payload };
         case ActionTypes.FETCH_POPULAR_TVSHOWS:
             return { ...state, 
                 Ptvshow: payload };
