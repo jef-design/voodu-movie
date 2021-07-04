@@ -14,13 +14,16 @@
                 border-radius: 25px;
                 margin-right: 5px;
                 padding: 4px 7px;
-                font-size: .9rem;
+                font-size: 0.9rem;
                 &:visited {
-                    color: rgb(26,92,255);
+                    color: rgb(26, 92, 255);
                 }
-                &:hover{
-                    border-color: #ffff;
-                    transition: .2s ease-in-out;
+                &:hover {
+                    background-color: rgb(26, 92, 255);
+                    box-shadow: 0 10px 20px -10px rgb(26, 92, 255);
+                    color: var(--textWhiteColor);
+                    transition: 0.2s linear;
+                    border: none;
                 }
             }
         }

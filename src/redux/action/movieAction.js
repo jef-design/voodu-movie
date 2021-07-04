@@ -46,7 +46,6 @@ export const fetchPopularMovies = () =>{
 export const fetchUpComingMovies = () =>{
    return async function(dispatch) {
     const response = await axios.get(request.fetchUpComingMovies)
-   //  console.log(response.data.results)
     dispatch({type: ActionTypes.FETCH_UPCOMING_MOVIES,
         payload: response.data.results})
    }
@@ -55,24 +54,12 @@ export const fetchUpComingMovies = () =>{
 export const fetchPopularTvShow = () =>{
    return async function(dispatch) {
     const response = await axios.get(request.fetchPopularTvShow)
-   //  console.log(response.data.results)
     dispatch({type: ActionTypes.FETCH_POPULAR_TVSHOWS,
         payload: response.data.results})
    }
 
 }
-export const fetchPopularPeople = (page) =>{
-   return async function(dispatch) {
-      dispatch({
-      type: ActionTypes.MOVIES_LOADING
-      })
-    const response = await axios.get(`person/popular?api_key=${API_KEY}&language=en-US&page=${page}`)
-   
-    dispatch({type: ActionTypes.FETCH_POPULAR_PEOPLE,
-        payload: response.data.results})
-   }
 
-}
 
 export const fetchSimilarMovies = (id) =>{
    return async function(dispatch) {
@@ -84,21 +71,6 @@ export const fetchSimilarMovies = (id) =>{
 
 }
 
-export const selectedMovie = (id) =>{
-   return async function(dispatch) {
-    const response = await axios.get(`/movie/${id}?api_key=${API_KEY}`)
-    dispatch({type: ActionTypes.SELECTED_MOVIE,
-        payload: response.data})
-   }
-
-}
-export const removeSelectedMovie = () =>{
-   return{
-      type: ActionTypes.REMOVE_SELECTED_MOVIE,
-      // payload: text
-  }
-
-}
 export const fetchMovieTrailer = (id) =>{
    return async function(dispatch) {
     const response = await axios.get(`/movie/${id}/videos?api_key=${API_KEY}`)
@@ -117,33 +89,7 @@ export const fetchCast = (id) =>{
    }
    
 }
-export const fetchPerson = (id) =>{
-   return async function(dispatch) {
-    const response = await axios.get(`/person/${id}?api_key=${API_KEY}`)
-   //  console.log(response.data.cast)
-    dispatch({type: ActionTypes.FETCH_PEOPLE,
-        payload: response.data})
-   }
-   
-}
-export const fetchPersonMovies = (id) =>{
-   return async function(dispatch) {
-    const response = await axios.get(`/person/${id}/movie_credits?api_key=${API_KEY}`)
-    console.log(response.data.cast)
-    dispatch({type: ActionTypes.FETCH_PEOPLE_MOVIES,
-        payload: response.data.cast})
-   }
-   
-}
-export const fetchPersonTVShows= (id) =>{
-   return async function(dispatch) {
-    const response = await axios.get(`/person/${id}/tv_credits?api_key=${API_KEY}`)
-    console.log(response.data.cast)
-    dispatch({type: ActionTypes.FETCH_PEOPLE_TV,
-        payload: response.data.cast})
-   }
-   
-}
+
 
 export const searchedText = (text) =>{
    return{

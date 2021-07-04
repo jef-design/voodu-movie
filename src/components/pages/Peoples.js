@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPopularPeople } from "../../redux/action/movieAction";
+import { fetchPopularPeople } from "../../redux/action/peopleAction";
 import PeopleCard from "../PeopleCard";
 import { Helmet } from "react-helmet";
 
@@ -13,7 +13,7 @@ function People() {
 
     useEffect(() => {
         dispatch(fetchPopularPeople(page));
-        setPage(page => page + 1);
+        // setPage(page => page + 1);
     }, [dispatch,page]);
     // const fetchData = () => {
     //     dispatch(fetchPopularPeople(page));

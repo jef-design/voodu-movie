@@ -281,7 +281,7 @@ body.ReactModal__Overlay {
 
 .hero__section {
   position: relative;
-  background-image: url(../components/images/VooduBg.jpg);
+  background-image: url(../assets/images/VooduBg.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -670,7 +670,12 @@ body.ReactModal__Overlay {
 }
 
 .movies__section__wrapper .button__container .play_button {
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 0.8rem;
   color: #fff !important;
   background: #1a5cff;
@@ -686,20 +691,11 @@ body.ReactModal__Overlay {
   -webkit-box-shadow: 0 10px 20px -10px #1a5cff;
           box-shadow: 0 10px 20px -10px #1a5cff;
   margin-bottom: 13px;
+  cursor: pointer;
 }
 
-.movies__section__wrapper .button__container .play_button a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 1rem;
-}
-
-.movies__section__wrapper .button__container .play_button a i {
-  font-size: 1.5rem;
+.movies__section__wrapper .button__container .play_button i {
+  font-size: 1.3rem;
 }
 
 .movies__section__wrapper .button__container .iframe__wrapper {
@@ -740,7 +736,6 @@ body.ReactModal__Overlay {
 .cast__container {
   max-width: 100px;
   border-radius: 5px;
-  font-size: 0.8rem;
   margin-right: 0.8rem;
 }
 
@@ -755,6 +750,15 @@ body.ReactModal__Overlay {
   -webkit-transform: scale(1.1) translateY(-5px);
           transform: scale(1.1) translateY(-5px);
   opacity: 0.7;
+}
+
+.cast__container .cast__name {
+  font-size: .8rem;
+}
+
+.cast__container .cast__character {
+  font-size: .6rem;
+  color: var(--textPrimaryColor);
 }
 
 .modal__close {
@@ -918,7 +922,7 @@ body.ReactModal__Overlay {
   padding-left: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin-top: 7rem;
+  margin-top: 6rem;
 }
 
 .search__section .search__results {
@@ -1056,7 +1060,7 @@ body.ReactModal__Overlay {
   border-radius: 25px;
   margin-right: 5px;
   padding: 4px 7px;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .movies__pages__section .tabs .tabs__container li:visited {
@@ -1064,9 +1068,13 @@ body.ReactModal__Overlay {
 }
 
 .movies__pages__section .tabs .tabs__container li:hover {
-  border-color: #ffff;
-  -webkit-transition: .2s ease-in-out;
-  transition: .2s ease-in-out;
+  background-color: #1a5cff;
+  -webkit-box-shadow: 0 10px 20px -10px #1a5cff;
+          box-shadow: 0 10px 20px -10px #1a5cff;
+  color: var(--textWhiteColor);
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+  border: none;
 }
 
 .genre-grid {

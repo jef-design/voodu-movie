@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchPerson, fetchPersonMovies, fetchPersonTVShows } from "../redux/action/movieAction";
+import { fetchPerson, fetchPersonMovies, fetchPersonTVShows } from "../redux/action/peopleAction";
 import { useDispatch, useSelector } from "react-redux";
 import MovieCard from "./MovieCard";
 import TVshowCard from "./TVshowCard";
@@ -12,7 +12,6 @@ function People() {
     const person = useSelector(state => state.peopleReducer.person);
     const personmovies = useSelector(state => state.peopleReducer.personmovies);
     const persontv = useSelector(state => state.peopleReducer.persontvshows);
-    // console.log("person", person);
 
     useEffect(() => {
         dispatch(fetchPerson(id));
@@ -84,9 +83,9 @@ function People() {
             </div>
             <div className="person__movies">
             <h4>ALSO KNOWN FOR </h4>
-            <h1>MOVIES</h1>
+            <h2>MOVIES</h2>
             <div className="movies__container">{PersonMovies}</div>
-            <h1>TV SERIES</h1>
+            <h2>TV SERIES</h2>
             <div className="movies__container">{PersonTV}</div>
             </div>
         </React.Fragment>

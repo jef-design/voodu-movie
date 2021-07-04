@@ -29,7 +29,7 @@ function TabsTv() {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/movie/genre">
+                            <Link to="/tv/genre">
                             Genre
                             </Link>
                         </li>

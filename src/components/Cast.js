@@ -27,8 +27,8 @@ function Cast() {
                                         src={POSTERPATH_URL + profile_path}
                                         alt=""
                                     />
-                                    <p>{name}</p>
-                                    <p>{character}</p>
+                                    <p className="cast__name" >{name}</p>
+                                    <p className="cast__character" >{character}</p>
                                 </div>
                             </div>
                         </div>

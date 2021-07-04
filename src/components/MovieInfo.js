@@ -2,14 +2,16 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
     fetchMovieTrailer,
-    selectedMovie,
     fetchCast,
-    fetchSimilarMovies,
-    removeSelectedMovie,
+    fetchSimilarMovies
 } from "../redux/action/movieAction";
+import {
+    selectedMovie,
+    removeSelectedMovie,
+} from "../redux/action/selectedMovieAction";
 import { useDispatch, useSelector } from "react-redux";
 import StarRatingComponent from "react-star-rating-component";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/youtube";
 import MovieCard from "./MovieCard";
 import PeopleCard from "./PeopleCard";
 import Modal from "react-modal";

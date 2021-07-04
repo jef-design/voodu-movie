@@ -22,3 +22,21 @@ export const fetchGenre = (id) =>{
    }
 
 }
+export const fetchGenreListTV = () =>{
+   return async function(dispatch) {
+    const response = await axios.get(request.fetchGenreListTV)
+    dispatch({type: ActionTypes.FETCH_GENRE_LIST,
+        payload: response.data.genres})
+   }
+
+}
+export const fetchGenreTV = (id) =>{
+   return async function(dispatch) {
+    const response = await axios.get(request.fetchGenreTV + id)
+    console.log(id);
+    console.log(response)
+    dispatch({type: ActionTypes.FETCH_GENRE,
+        payload: response.data.results})
+   }
+
+}
