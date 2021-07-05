@@ -167,7 +167,7 @@ function MovieInfo() {
                                     </Modal>
                                 </div>
                                 <p className="movie__info__sub">SYPNOSIS</p>
-                                <p>{overview}</p>
+                                <p className="movie__info__text">{overview}</p>
 
                                 <p className="movie__info__sub genre_title">
                                     GENRE

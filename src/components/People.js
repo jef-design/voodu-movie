@@ -69,7 +69,7 @@ function People() {
                             <div className="person__details">
                                 <h2>{name}</h2>
                                 <p className="person__info">Biography</p>
-                                <p>{biography}</p>
+                                <p className="person__biography">{biography}</p>
                                 <p className="person__info">Also Known as</p>
                                 <p>{also_known_as}</p>
                                 <p className="person__info">Birthday</p>

@@ -658,6 +658,10 @@ body.ReactModal__Overlay {
   margin-top: 18px;
 }
 
+.movies__section__wrapper .movie__info__container .movie__info__text {
+  text-align: justify;
+}
+
 @media screen and (max-width: 751px) {
   .movies__section__wrapper .button__container {
     display: -webkit-box;
@@ -1032,6 +1036,11 @@ body.ReactModal__Overlay {
   }
 }
 
+.person .person__details .person__biography {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .person__movies {
   max-width: 1200px;
   margin: 0 auto;
@@ -1113,6 +1122,13 @@ body.ReactModal__Overlay {
   .genre-grid {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .genre-grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
 }
 /*# sourceMappingURL=App.css.map */
