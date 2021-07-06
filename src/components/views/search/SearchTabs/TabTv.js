@@ -12,7 +12,7 @@ function TabTv() {
 
  useEffect(() => {
     dispatch(searchedTVShow(query))
- }, [])
+ }, [dispatch,query])
 
     return (
         <div className="search__movie__container">

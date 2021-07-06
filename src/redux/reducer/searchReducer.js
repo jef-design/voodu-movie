@@ -3,7 +3,7 @@ import {ActionTypes} from '../constants/types'
 const defaultState = {
     searchedmovie: [],
     searchedtv: [],
-    text: [],
+    text: "",
 }
 
 const searchReducer = (state = defaultState, {type, payload}) => {
@@ -15,7 +15,7 @@ const searchReducer = (state = defaultState, {type, payload}) => {
         case ActionTypes.SEARCHED_TEXT:
              return { ...state, text: payload };  
         case ActionTypes.REMOVE_SEARCHED_TEXT:
-             return { ...state, text:[] };        
+             return { ...state, text:"" };        
         default:
             return state;
     }

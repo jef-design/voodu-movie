@@ -13,10 +13,10 @@ function Search() {
 
     const searchInputHandler = e => {
         setSearchInput(e.target.value);
-        console.log(searchInput);
+      
     };
     const submitHandler = async e => {
-        // e.preventDefault();
+        e.preventDefault();
         dispatch(searchedText(searchInput));
             history.push(`/results/${searchInput}`,
             );

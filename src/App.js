@@ -1,7 +1,7 @@
 import React from "react";
 import "./style/App.css";
 import Header from "./components/Header";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
 import MovieInfo from "./components/main/Movies/MovieInfo";
 import Home from "./components/pages/Home";
 import SearchResults from "./components/SearchResults";

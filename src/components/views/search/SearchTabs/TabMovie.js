@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import {useSelector,useDispatch} from 'react-redux';
 import {searchedMovie} from '../../../../redux/action/searchAction'
 import MovieCard from "../../../main/Movies/MovieCard";
-import { withRouter } from "react-router-dom";
 
 
 function TabMovie() {
@@ -13,7 +12,7 @@ function TabMovie() {
 
  useEffect(() => {
     dispatch(searchedMovie(query))
- }, [])
+ }, [dispatch,query])
 
     return (
         <div className="search__movie__container">
