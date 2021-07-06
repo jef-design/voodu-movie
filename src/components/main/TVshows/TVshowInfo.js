@@ -1,27 +1,25 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
-    fetchMovieTrailer,
-    fetchCast,
-    fetchSimilarMovies
-} from "../redux/action/movieAction";
-import {
-    selectedMovie,
-    removeSelectedMovie,
-} from "../redux/action/selectedMovieAction";
+    selectedTVShow,
+    fetchTVTrailer,
+    fetchSimilarTV,
+    fetchCastTV,
+    removeSelectedTV,
+} from "../../../redux/action/tvshowAction";
 import { useDispatch, useSelector } from "react-redux";
 import StarRatingComponent from "react-star-rating-component";
-import ReactPlayer from "react-player/youtube";
-import MovieCard from "./MovieCard";
-import PeopleCard from "./PeopleCard";
-import Modal from "react-modal";
+import ReactPlayer from "react-player";
+import PeopleCard from "../People/PeopleCard";
+import TVshowCard from "../TVshows/TVshowCard";
+import SeasonCard from "../Season/SeasonCard";
 import { Helmet } from "react-helmet";
 
 
-function MovieInfo() {
+function TVshowInfo() {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const movie = useSelector(state => state.selectedMovie);
+    const tvshow = useSelector(state => state.selectedTV);
     const similar = useSelector(state => state.fetchmovies.SMmovies);
     const trailer = useSelector(state => state.trailer.trailer);
     const fullcasts = useSelector(state => state.castReducer.casts);
@@ -29,39 +27,14 @@ function MovieInfo() {
     const BACKDROP_URL = `https://image.tmdb.org/t/p/original/`;
     const YT_URL = `https://www.youtube.com/watch?v=`;
 
-    //modal
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-    const customStyles = {
-        content: {
-            position: "fixed",
-            zIndex: "50000",
-            top: "0",
-            left: "0",
-            right: "0",
-            bottom: "0",
-            padding: "0",
-            overflow: "hidden",
-        },
-    };
-
-    function openModal() {
-        setIsOpen(true);
-    }
-    function closeModal() {
-        setIsOpen(false);
-    }
-    // function afterOpenModal() {
-    //     references are now sync'd and can be accessed.
-    //     subtitle.style.color = '#f00';
-    //   }
 
     useEffect(() => {
-        dispatch(selectedMovie(id));
-        dispatch(fetchMovieTrailer(id));
-        dispatch(fetchCast(id));
-        dispatch(fetchSimilarMovies(id));
+        dispatch(selectedTVShow(id));
+        dispatch(fetchTVTrailer(id));
+        dispatch(fetchCastTV(id));
+        dispatch(fetchSimilarTV(id));
         return () => {
-            dispatch(removeSelectedMovie());
+            dispatch(removeSelectedTV());
         };
     }, [dispatch, id]);
 
@@ -81,7 +54,7 @@ function MovieInfo() {
         );
     });
     // console.log("casts", casts)
-    const MovieCast = fullcasts.map((c, i) => {
+    const TVCast = fullcasts.map((c, i) => {
         const { id, profile_path, name, character } = c;
         return (
             <PeopleCard
@@ -94,14 +67,14 @@ function MovieInfo() {
         );
     });
     const SimilarMovies = similar.map((movie, index) => {
-        const { id, poster_path, title, vote_average, release_date } = movie;
+        const { id, poster_path, name, vote_average, first_air_date } = movie;
         return (
-            <MovieCard
+            <TVshowCard
                 id={id}
                 key={index}
-                title={title}
+                name={name}
                 poster_path={poster_path}
-                release_date={release_date}
+                first_air_date={first_air_date}
                 vote_average={vote_average}
             />
         );
@@ -109,62 +82,63 @@ function MovieInfo() {
 
     return (
         <section className="movies__section__wrapper">
-             
-            {[movie].map((mov, i) => {
+            {[tvshow].map((mov, i) => {
                 const {
-                    title,
+                    name,
                     overview,
                     genres = [],
                     poster_path,
                     backdrop_path,
-                    release_date,
+                    first_air_date,
                     vote_average,
-                    runtime,
+                    episode_run_time,
+                    number_of_seasons,
+                    seasons = [],
                 } = mov;
-                const CurrentYear = new Date(release_date).getFullYear();
+                const CurrentYear = new Date(first_air_date).getFullYear();
                 const time_convert = runtime => {
-                    const hours = Math.floor(runtime / 60);
-                    const minutes = runtime % 60;
+                    const hours = Math.floor(episode_run_time / 60);
+                    const minutes = episode_run_time % 60;
                     return `${hours}h ${minutes}min/s`;
                 };
                 return (
                     <section key={i}>
-                    <Helmet>
-                        <title>{`${title} (${CurrentYear})`} | Voodu</title>
-                    </Helmet>
+                         <Helmet>
+                            <title>{`${name} (${CurrentYear})`} | Voodu</title>
+                        </Helmet>
                         <div className="movie__info__backdrop">
                             <img
                                 src={BACKDROP_URL + backdrop_path}
-                                alt={title}
+                                alt={name}
                             />
                         </div>
                         <div className="movie__info__container">
                             <img
                                 src={POSTERPATH_URL + poster_path}
-                                alt={title}
+                                alt={name}
                             />
-                            <div >
+                            <div className="movie__info__wrapper">
                                 <h1>
-                                    {title} ({CurrentYear})
+                                    {name} ({CurrentYear})
                                 </h1>
-                                <div className="button__container">
-                                    <button onClick={openModal} className="play_button">
-                                            <i className="bx bx-play"></i>Play
-                                    </button>
-                                    <Modal
-                                        isOpen={modalIsOpen}
-                                        onRequestClose={closeModal}
-                                        style={customStyles}
-                                        ariaHideApp={false}
-                                      
-                                    >
-                                        {/* <h2 ref={(_subtitle) => (subtitle = subtitle)}>Hello</h2> */}
-                                        <button className="modal__close" onClick={closeModal}>
-                                            close
-                                        </button>
-                                       <iframe title="stream" className="iframe__wrapper" src={`https://www.2embed.ru/embed/tmdb/movie?id=${id}`} frameBorder="0" scrolling="no" allowFullScreen={true}></iframe>
-                                       
-                                    </Modal>
+
+                                <div className="tv__seasons">
+                                    <p className="movie__info__sub">{number_of_seasons} SEASONS</p>
+                                    <div className="tv__seasons__slider">
+                                        <div className="tv__slider__wrapper">
+                                            {seasons.map((season,i) => {
+                                                const {poster_path, name,season_number} = season
+                                                return (
+                                                    <SeasonCard
+                                                    key={i}
+                                                    poster_path={poster_path}
+                                                    name={name}
+                                                    season_number={season_number}
+                                                    />
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
                                 </div>
                                 <p className="movie__info__sub">SYPNOSIS</p>
                                 <p className="movie__info__text">{overview}</p>
@@ -193,12 +167,14 @@ function MovieInfo() {
 
                                     <div>
                                         <p>RELEASE DATE </p>
-                                        <span>{release_date}</span>
+                                        <span>{first_air_date}</span>
                                     </div>
 
                                     <div>
                                         <p>RUNTIME </p>
-                                        <span>{time_convert(runtime)} </span>
+                                        <span>
+                                            {time_convert(episode_run_time)}{" "}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -210,7 +186,7 @@ function MovieInfo() {
                                 <h4>FULL CAST</h4>
                                 <div className="slider">
                                     <div className="slider__wrapper">
-                                        {MovieCast}
+                                        {TVCast}
                                     </div>
                                 </div>
                                 <h4>YOU MAY ALSO LIKE</h4>
@@ -226,4 +202,4 @@ function MovieInfo() {
     );
 }
 
-export default MovieInfo;
+export default TVshowInfo;

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchPerson, fetchPersonMovies, fetchPersonTVShows } from "../redux/action/peopleAction";
+import { fetchPerson, fetchPersonMovies, fetchPersonTVShows } from "../../../redux/action/peopleAction";
 import { useDispatch, useSelector } from "react-redux";
-import MovieCard from "./MovieCard";
-import TVshowCard from "./TVshowCard";
+import MovieCard from "../Movies/MovieCard";
+import TVshowCard from "../TVshows/TVshowCard";
 
 function People() {
     const { id } = useParams();

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPopularPeople } from "../../redux/action/peopleAction";
-import PeopleCard from "../PeopleCard";
+import PeopleCard from "../main/People/PeopleCard";
 import { Helmet } from "react-helmet";
 
 

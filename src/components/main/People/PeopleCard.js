@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import NoPortrait from "../assets/images/NoPortrait";
+import NoPortrait from "../../../assets/images/AlternativeImage";
 
 function PeopleCard({id,i, profile_path, name,character}) {
     const POSTERPATH_URL = `https://image.tmdb.org/t/p/w500/`;

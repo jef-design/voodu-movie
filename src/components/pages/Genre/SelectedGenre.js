@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGenre } from "../../../redux/action/genreAction";
-import MovieCard from "../../MovieCard";
+import MovieCard from "../../main/Movies/MovieCard";
 
 function SelectedGenre() {
     const { id,name } = useParams();

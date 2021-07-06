@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import Search from "./Search";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false)
@@ -15,10 +16,10 @@ function Header() {
                 </div>
                 <nav>
                     <ul className="nav_menu" style={{transform: isOpen ? "translateX(0px)" : "" }}>
-                        <Link onClick={()=> setIsOpen(!isOpen)} to="/">Home</Link>
-                        <Link onClick={()=> setIsOpen(!isOpen)} to="/movie/popular">Movies</Link>
-                        <Link onClick={()=> setIsOpen(!isOpen)} to="/tv/popular">TV Shows</Link>
-                        <Link onClick={()=> setIsOpen(!isOpen)} to="/people">People</Link>
+                        <NavLink exact onClick={()=> setIsOpen(!isOpen)} to="/" activeClassName="active">Home</NavLink>
+                        <NavLink onClick={()=> setIsOpen(!isOpen)} to="/movie/popular" activeClassName="active">Movies</NavLink>
+                        <NavLink onClick={()=> setIsOpen(!isOpen)} to="/tv/popular" activeClassName="active">TV Shows</NavLink>
+                        <NavLink onClick={()=> setIsOpen(!isOpen)} to="/people" activeClassName="active">People</NavLink>
                     </ul>
                 </nav>
                 </div>

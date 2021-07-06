@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUpComingMovies } from "../../../redux/action/movieAction";
-import MovieCard from "../../MovieCard";
+import MovieCard from "../../main/Movies/MovieCard";
 
 function TopRated() {
     const upcoming = useSelector(state => state.fetchmovies.Umovies);

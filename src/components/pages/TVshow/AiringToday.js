@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAiringToday } from "../../../redux/action/tvshowAction";
-import TVshowCard from "../../TVshowCard";
+import TVshowCard from "../../main/TVshows/TVshowCard";
 
 function AiringToday() {
     const airingtoday = useSelector(state => state.fetchTVShows.airingtoday);

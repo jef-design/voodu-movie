@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import {
     fetchNowPlayingMovies,
     fetchTopRatedMovies,
-} from "../redux/action/movieAction";
+} from "../../../redux/action/movieAction";
 import { useDispatch, useSelector } from "react-redux";
 import MovieCard from "./MovieCard";
 import StarRatingComponent from "react-star-rating-component";

@@ -1,6 +1,6 @@
 import React from 'react'
 import {useSelector} from 'react-redux';
-import MovieCard from "./MovieCard";
+import MovieCard from "../components/main/Movies/MovieCard";
 
 function SearchResults() {
     const searchtext = useSelector(state => state.searchedMovie.text);

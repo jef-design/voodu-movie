@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AlternativeImage from "../assets/images/AlternativeImage";
+import AlternativeImage from "../../../assets/images/AlternativeImage";
 import { useParams } from "react-router-dom";
 
 function SeasonCard({

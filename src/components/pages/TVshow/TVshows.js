@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPopularTvShow } from '../../../redux/action/movieAction';
-import TVshowCard from "../../TVshowCard";
+import TVshowCard from "../../main/TVshows/TVshowCard";
 
 function TVshows() {
     const popular = useSelector(state => state.fetchmovies.Ptvshow);

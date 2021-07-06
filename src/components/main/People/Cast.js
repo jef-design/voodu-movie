@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCast } from "../redux/action/movieAction";
+import { fetchCast } from "../../../redux/action/movieAction";
 
 function Cast() {
     const { id } = useParams();

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 
 function MoviesContainer() {
@@ -8,26 +8,22 @@ function MoviesContainer() {
             <h1>Browse Movies</h1>
             <nav className="tabs">
                     <ul className="tabs__container">
-                        <li>
-                            <Link to="/movie/popular">
+                            <NavLink exact to="/movie/popular" activeClassName="tab-active">
                             Popular
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/movie/toprated">
+                            </NavLink>
+ 
+                            <NavLink to="/movie/toprated" activeClassName="tab-active">
                             Top Rated
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/movie/upcoming">
+                            </NavLink>
+
+                            <NavLink to="/movie/upcoming" activeClassName="tab-active">
                             Upcoming
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/movie/genre">
+                            </NavLink>
+
+                            <NavLink to="/movie/genre" activeClassName="tab-active">
                             Genre
-                            </Link>
-                        </li>
+                            </NavLink>
+                       
                     </ul>
             </nav>
             

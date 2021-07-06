@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchEpisodes } from "../redux/action/tvshowAction";
+import { fetchEpisodes } from "../../../redux/action/tvshowAction";
 import EpisodeCard from "./EpisodeCard";
 
 function Episodes() {

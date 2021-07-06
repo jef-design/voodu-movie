@@ -1,5 +1,6 @@
 :root {
   --primaryColor: #060d17;
+  --glowBlue: rgb(26,92,255);
   --textWhiteColor: #fff;
   --textPrimaryColor: #5a606b;
   --textYellowColor: #f4c10f;
@@ -230,6 +231,11 @@ body.ReactModal__Overlay {
 
 .header nav ul a:hover {
   color: #1a5cff;
+}
+
+.header nav ul .active {
+  color: #1a5cff;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 887px) {
@@ -798,7 +804,8 @@ body.ReactModal__Overlay {
 }
 
 .tv__seasons .tv__seasons__slider::-webkit-scrollbar {
-  display: none;
+  width: 100%;
+  height: 7px;
 }
 
 .tv__seasons .tv__seasons__slider .tv__slider__wrapper {
@@ -1064,23 +1071,30 @@ body.ReactModal__Overlay {
   padding: 20px 0px;
 }
 
-.movies__pages__section .tabs .tabs__container li {
+.movies__pages__section .tabs .tabs__container a {
   border: 1px solid var(--textPrimaryColor);
   border-radius: 25px;
   margin-right: 5px;
   padding: 4px 7px;
   font-size: 0.9rem;
+  display: block;
 }
 
-.movies__pages__section .tabs .tabs__container li:visited {
-  color: #1a5cff;
-}
-
-.movies__pages__section .tabs .tabs__container li:hover {
+.movies__pages__section .tabs .tabs__container a:hover {
   background-color: #1a5cff;
   -webkit-box-shadow: 0 10px 20px -10px #1a5cff;
           box-shadow: 0 10px 20px -10px #1a5cff;
   color: var(--textWhiteColor);
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+  border: none;
+}
+
+.tab-active {
+  background-color: #1a5cff;
+  -webkit-box-shadow: 0 10px 20px -10px #1a5cff;
+          box-shadow: 0 10px 20px -10px #1a5cff;
+  color: var(--textWhiteColor) !important;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
   border: none;
@@ -1130,5 +1144,91 @@ body.ReactModal__Overlay {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: #f1f1f1;
+  margin: 0 auto;
+  word-break: break-all;
+}
+
+.bloc-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tabs-but {
+  padding: 10px;
+  text-align: center;
+  width: 50%;
+  background: rgba(128, 128, 128, 0.075);
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  position: relative;
+  outline: none;
+}
+
+.tabs-but:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.274);
+}
+
+.active-tabs {
+  background: white;
+}
+
+.active-tabs::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: calc(100% + 2px);
+  height: 5px;
+  background: #1a5cff;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+button {
+  border: none;
+  font-weight: bolder;
+}
+
+.content-tabs {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.content {
+  background: var(--primaryColor);
+  padding-top: 20px;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.content p {
+  width: 100%;
+  height: 100%;
+}
+
+.active-content {
+  display: block;
 }
 /*# sourceMappingURL=App.css.map */

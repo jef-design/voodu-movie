@@ -1,6 +1,6 @@
 import React from 'react'
 import Banner from '../Banner'
-import Movies from '../Movies';
+import Movies from '../main/Movies/Movies';
 import { Helmet } from "react-helmet";
 
 function Home() {

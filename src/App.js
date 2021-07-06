@@ -2,22 +2,25 @@ import React from "react";
 import "./style/App.css";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import MovieInfo from "./components/MovieInfo";
+import MovieInfo from "./components/main/Movies/MovieInfo";
 import Home from "./components/pages/Home";
 import SearchResults from "./components/SearchResults";
-import People from "./components/People";
+import People from "./components/main/People/People";
 import TVshows from "./components/pages/TVshow/TVshows";
 import Peoples from "./components/pages/Peoples";
 import MoviesContainer from "./components/pages/Movies/MoviesContainer";
 import TvShowContainer from './components/pages/TVshow/TvShowContainer'
-import TVshowInfo from "./components/TVshowInfo";
-import Episodes from "./components/Episodes";
+import TVshowInfo from "./components/main/TVshows/TVshowInfo";
+import Episodes from "./components/main/Episodes/Episodes";
+import SearchContainer from "./components/views/search/SearchContainer";
+import { createBrowserHistory } from "history";
 
-
+const history = createBrowserHistory();
 
 function App() {
+    
     return (
-        <Router>
+        <Router history={history}>
             <React.Fragment>
                 <Header />
                 <Switch>
@@ -29,7 +32,7 @@ function App() {
                     <Route exact path="/movieinfo/:id" component={MovieInfo} />
                     <Route exact path="/tvinfo/:id" component={TVshowInfo} />
                     <Route exact path="/tvinfo/:id/episode/:seasonnumber/" component={Episodes} />
-                    <Route path="/results/" component={SearchResults} />
+                    <Route path="/results/:search" component={SearchContainer} />
                     <Route path="/person/:id" component={People} />
                 </Switch>
             </React.Fragment>

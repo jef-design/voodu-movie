@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import StarRatingComponent from "react-star-rating-component";
-import AlternativeImage from "../assets/images/AlternativeImage";
+import AlternativeImage from "../../../assets/images/AlternativeImage";
 
 function TVshowCard({
     id,

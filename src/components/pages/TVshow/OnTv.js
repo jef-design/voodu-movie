@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchOnTV } from "../../../redux/action/tvshowAction";
-import TVshowCard from "../../TVshowCard";
+import TVshowCard from "../../main/TVshows/TVshowCard";
 
 function OnTv() {
     const ontv = useSelector(state => state.fetchTVShows.ontv);

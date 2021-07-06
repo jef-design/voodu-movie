@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {fetchTopRatedTVshow } from "../../../redux/action/tvshowAction";
-import TVshowCard from "../../TVshowCard";
+import TVshowCard from "../../main/TVshows/TVshowCard";
 
 function TopRated() {
     const toprated = useSelector(state => state.fetchTVShows.topratedTV);

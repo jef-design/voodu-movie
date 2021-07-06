@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGenreTV } from "../../../redux/action/genreAction";
-import TVshowCard from "../../TVshowCard";
+import TVshowCard from "../../main/TVshows/TVshowCard";
 
 function SelectedGenre() {
     const { id,name } = useParams();

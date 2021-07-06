@@ -4,7 +4,7 @@ import { withRouter, useHistory } from "react-router-dom";
 import { searchedText, searchedMovie } from "../redux/action/movieAction";
 
 function Search() {
-
+    const API_SEARCH = `https://api.themoviedb.org/3/search/movie?api_key=5cffc0e248a2072bdedd8248f5d9f423&query=`;
     const [searchInput, setSearchInput] = useState("");
     const [isOpen, setIsOpen] = useState(false);
     const history = useHistory();
@@ -16,11 +16,26 @@ function Search() {
         console.log(searchInput);
     };
     const submitHandler = async e => {
-        // e.preventDefault();
+        e.preventDefault();
         dispatch(searchedText(searchInput));
-            history.push(`/results/${searchInput}`,
-            );
 
+        const response = await fetch(API_SEARCH + searchInput);
+        const results = await response.json();
+
+        if (results.status >= 400 || results === [{}]) {
+            console.log("error");
+            history.push({
+                pathname: `/noresults/${searchInput}`,
+            });
+        } else {
+            dispatch(searchedMovie(results));
+            history.push({
+                pathname: `/results/${searchInput}`,
+            });
+            // setSearchCountry(results);
+            console.log(results);
+        }
+        // dispatch(removedSearchedText(searchInput));
         setSearchInput("");
         searchInputRef.current?.focus();
     };
@@ -38,7 +53,7 @@ function Search() {
                         className="text_search"
                         id="text_search"
                         type="text"
-                        placeholder="Search Movies and TV Shows..."
+                        placeholder="Search Movies..."
                         value={searchInput}
                     />
                 </form>
