@@ -5,7 +5,7 @@ import TVshowCard from "../../../main/TVshows/TVshowCard";
 
 
 function TabTv() {
-    const query = useSelector(state => state.searchedMovie.text);
+    const query = useSelector(state => state.searchedText.text);
     const tvshow = useSelector(state => state.searchresult.tv)
     const dispatch = useDispatch();
     // const searchInputRef = useRef();

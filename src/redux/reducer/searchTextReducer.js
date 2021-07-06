@@ -7,7 +7,7 @@ const defaultState = {
     
 }
 
-const searchReducer = (state = defaultState, {type, payload}) => {
+const searchTextReducer = (state = defaultState, {type, payload}) => {
     switch (type) {
         case ActionTypes.SEARCHED_TEXT:
              return { ...state, text: payload };  
@@ -21,5 +21,5 @@ const searchReducer = (state = defaultState, {type, payload}) => {
             return state;
     }
 }
-export default searchReducer;
+export default searchTextReducer;
 

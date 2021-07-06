@@ -4,7 +4,7 @@ import Tabs from '../../common/Tabs'
 import { withRouter } from "react-router-dom";
 
 function SearchContainer() {
-    const searchtext = useSelector(state => state.searchedMovie.text);
+    const searchtext = useSelector(state => state.searchedText.text);
     return (
         <section className="search__section">
             <div className="search__results">

@@ -7,10 +7,6 @@ const defaultState = {
     Pmovies: [],
     Umovies: [],
     Ptvshow: [],
-    person: [],
-    personmovies: [],
-    persontvshows: [],
-    popularpeople: [],
     // loading: false,
 };
 
@@ -40,10 +36,6 @@ const movieReducer = (state = defaultState, { type, payload }) => {
          case ActionTypes.FETCH_SIMILAR_TV:
                 return { ...state, 
                         SMmovies: payload };
-        case ActionTypes.FETCH_POPULAR_PEOPLE:
-            return { ...state,
-                 popularpeople: payload, 
-                 loading: false };
         case ActionTypes.FETCH_POPULAR_TVSHOWS:
             return { ...state, 
                 Ptvshow: payload };

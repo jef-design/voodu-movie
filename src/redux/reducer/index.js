@@ -2,7 +2,7 @@ import {combineReducers} from 'redux';
 import movieReducer from './movieReducer'
 import trailerReducer from './trailerReducer'
 import selectedMovieReducer from './selectedMovieReducer';
-import searchReducer from './searchReducer';
+import searchTextReducer from './searchTextReducer';
 import searchResultReducer from './searchResultReducer'
 import castReducer from './castReducer';
 import genreReducer from './genreReducer';
@@ -16,7 +16,7 @@ const allreducers = combineReducers({
     fetchmovies : movieReducer,
     selectedMovie: selectedMovieReducer,
     trailer: trailerReducer,
-    searchedMovie: searchReducer,
+    searchedText: searchTextReducer,
     searchresult: searchResultReducer,
     castReducer: castReducer,
     genreReducer: genreReducer,
