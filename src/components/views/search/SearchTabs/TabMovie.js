@@ -6,7 +6,7 @@ import MovieCard from "../../../main/Movies/MovieCard";
 
 function TabMovie() {
     const query = useSelector(state => state.searchedMovie.text);
-    const movies = useSelector(state => state.searchedMovie.searchedmovie)
+    const movies = useSelector(state => state.searchresult.movie)
     const dispatch = useDispatch();
     // const searchInputRef = useRef();
 

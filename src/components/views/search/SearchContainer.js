@@ -1,7 +1,5 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-// import TabMovie from './SearchTabs/TabMovie';
-// import TabTv from './SearchTabs/TabTv';
 import Tabs from '../../common/Tabs'
 import { withRouter } from "react-router-dom";
 

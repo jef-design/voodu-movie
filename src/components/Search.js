@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { withRouter, useHistory } from "react-router-dom";
-import { searchedText, searchedMovie } from "../redux/action/movieAction";
+import { searchedText} from "../redux/action/movieAction";
 
 function Search() {
 

@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import {useSelector,useDispatch} from 'react-redux';
-import {searchedMovie, searchedTVShow} from '../../../../redux/action/searchAction'
+import {searchedTVShow} from '../../../../redux/action/searchAction'
 import TVshowCard from "../../../main/TVshows/TVshowCard";
 
 
 function TabTv() {
     const query = useSelector(state => state.searchedMovie.text);
-    const tvshow = useSelector(state => state.searchedMovie.searchedtv)
+    const tvshow = useSelector(state => state.searchresult.tv)
     const dispatch = useDispatch();
     // const searchInputRef = useRef();
 

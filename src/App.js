@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import { Router, Switch, Route } from "react-router-dom";
 import MovieInfo from "./components/main/Movies/MovieInfo";
 import Home from "./components/pages/Home";
-import SearchResults from "./components/SearchResults";
+// import SearchResults from "./components/SearchResults";
 import People from "./components/main/People/People";
 import TVshows from "./components/pages/TVshow/TVshows";
 import Peoples from "./components/pages/Peoples";
