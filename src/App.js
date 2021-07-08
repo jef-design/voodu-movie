@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import { Router, Switch, Route } from "react-router-dom";
 import MovieInfo from "./components/main/Movies/MovieInfo";
 import Home from "./components/pages/Home";
+import Footer from "./components/main/Footer/Footer";
 // import SearchResults from "./components/SearchResults";
 import People from "./components/main/People/People";
 import TVshows from "./components/pages/TVshow/TVshows";
@@ -35,6 +36,7 @@ function App() {
                     <Route path="/results/:search" component={SearchContainer} />
                     <Route path="/person/:id" component={People} />
                 </Switch>
+                <Footer/>
             </React.Fragment>
         </Router>
     );

@@ -1136,9 +1136,10 @@ body.ReactModal__Overlay {
   border: 1px solid var(--textPrimaryColor);
   border-radius: 25px;
   margin-right: 5px;
-  padding: 4px 10px;
+  padding: 4px 8px;
   font-size: 0.9rem;
   display: block;
+  text-align: center;
 }
 
 .movies__pages__section .tabs .tabs__container a:hover {
@@ -1292,5 +1293,60 @@ button {
 
 .active-content {
   display: block;
+}
+
+.footer-top {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-top h1 {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 836px) {
+  .footer-top h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.footer-top h1 span {
+  color: var(--textYellowColor);
+}
+
+.footer-top p {
+  color: var(--textPrimaryColor);
+}
+
+.footer {
+  border-top: 3px solid var(--secondaryColor);
+  padding: 20px 0;
+}
+
+.footer .footer-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: .8rem;
+  color: var(--textPrimaryColor);
+}
+
+.footer .footer-bottom p span {
+  color: var(--glowBlue);
+}
+
+.footer .footer-bottom .footer__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: var(--textWhiteColor);
+}
+
+.footer .footer-bottom .footer__menu li {
+  margin-right: 10px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=App.css.map */
