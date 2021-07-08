@@ -4,6 +4,7 @@ import ConfigStore from './redux/store/ConfigStore';
 import App from './App';
 import {Provider} from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react'
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 
 const { store, persistor } = ConfigStore();
@@ -18,5 +19,5 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
+serviceWorkerRegistration.register();
 
