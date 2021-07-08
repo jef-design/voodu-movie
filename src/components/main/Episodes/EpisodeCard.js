@@ -41,8 +41,8 @@ function EpisodeCard({
                     className="bx bx-play-circle play__button"
                 ></i>
             </div>
-            <div>
-                <h3>S0{season_number} : E0{episode_number}</h3>
+            <div className="episode__info">
+                <h3 className="episode__number">S0{season_number} : E0{episode_number}</h3>
                 <h4>{name}</h4>
                 <p>{overview}</p>
             </div>

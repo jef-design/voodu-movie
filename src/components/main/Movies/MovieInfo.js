@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import {
     fetchMovieTrailer,
     fetchCast,
-    fetchSimilarMovies
+    fetchSimilarMovies,
 } from "../../../redux/action/movieAction";
 import {
     selectedMovie,
@@ -16,7 +16,6 @@ import MovieCard from "./MovieCard";
 import PeopleCard from "../People/PeopleCard";
 import Modal from "react-modal";
 import { Helmet } from "react-helmet";
-
 
 function MovieInfo() {
     const { id } = useParams();
@@ -50,11 +49,6 @@ function MovieInfo() {
     function closeModal() {
         setIsOpen(false);
     }
-    // function afterOpenModal() {
-    //     references are now sync'd and can be accessed.
-    //     subtitle.style.color = '#f00';
-    //   }
-
     useEffect(() => {
         dispatch(selectedMovie(id));
         dispatch(fetchMovieTrailer(id));
@@ -109,7 +103,6 @@ function MovieInfo() {
 
     return (
         <section className="movies__section__wrapper">
-             
             {[movie].map((mov, i) => {
                 const {
                     title,
@@ -129,41 +122,59 @@ function MovieInfo() {
                 };
                 return (
                     <section key={i}>
-                    <Helmet>
-                        <title>{`${title} (${CurrentYear})`} | Voodu</title>
-                    </Helmet>
+                        <Helmet>
+                            <title>{`${title} (${CurrentYear})`} | Voodu</title>
+                        </Helmet>
                         <div className="movie__info__backdrop">
-                            <img
-                                src={BACKDROP_URL + backdrop_path}
-                                alt={title}
-                            />
+                            {backdrop_path ? (
+                                <img
+                                    src={BACKDROP_URL + backdrop_path}
+                                    alt={title}
+                                />
+                            ) : (
+                                <img
+                                    src={POSTERPATH_URL + poster_path}
+                                    alt={title}
+                                />
+                            )}
                         </div>
                         <div className="movie__info__container">
                             <img
                                 src={POSTERPATH_URL + poster_path}
                                 alt={title}
                             />
-                            <div >
+                            <div>
                                 <h1>
                                     {title} ({CurrentYear})
                                 </h1>
                                 <div className="button__container">
-                                    <button onClick={openModal} className="play_button">
-                                            <i className="bx bx-play"></i>Play
+                                    <button
+                                        onClick={openModal}
+                                        className="play_button"
+                                    >
+                                        <i className="bx bx-play"></i>Play
                                     </button>
                                     <Modal
                                         isOpen={modalIsOpen}
                                         onRequestClose={closeModal}
                                         style={customStyles}
                                         ariaHideApp={false}
-                                      
                                     >
                                         {/* <h2 ref={(_subtitle) => (subtitle = subtitle)}>Hello</h2> */}
-                                        <button className="modal__close" onClick={closeModal}>
+                                        <button
+                                            className="modal__close"
+                                            onClick={closeModal}
+                                        >
                                             close
                                         </button>
-                                       <iframe title="stream" className="iframe__wrapper" src={`https://www.2embed.ru/embed/tmdb/movie?id=${id}`} frameBorder="0" scrolling="no" allowFullScreen={true}></iframe>
-                                       
+                                        <iframe
+                                            title="stream"
+                                            className="iframe__wrapper"
+                                            src={`https://www.2embed.ru/embed/tmdb/movie?id=${id}`}
+                                            frameBorder="0"
+                                            scrolling="no"
+                                            allowFullScreen={true}
+                                        ></iframe>
                                     </Modal>
                                 </div>
                                 <p className="movie__info__sub">SYPNOSIS</p>
@@ -175,7 +186,12 @@ function MovieInfo() {
                                 <ul>
                                     {genres.slice(0, 3).map(genre => {
                                         return (
-                                            <li key={genre.id}>{genre.name}</li>
+                                            <li
+                                                className="genre__list"
+                                                key={genre.id}
+                                            >
+                                                {genre.name}
+                                            </li>
                                         );
                                     })}
                                 </ul>

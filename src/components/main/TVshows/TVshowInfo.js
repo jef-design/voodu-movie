@@ -107,10 +107,17 @@ function TVshowInfo() {
                             <title>{`${name} (${CurrentYear})`} | Voodu</title>
                         </Helmet>
                         <div className="movie__info__backdrop">
-                            <img
-                                src={BACKDROP_URL + backdrop_path}
-                                alt={name}
-                            />
+                            {backdrop_path ? (
+                               <img
+                               src={BACKDROP_URL + backdrop_path}
+                               alt={name}
+                           />
+                            ) : (
+                                <img
+                                    src={POSTERPATH_URL + poster_path}
+                                    alt={name}
+                                />
+                            )}
                         </div>
                         <div className="movie__info__container">
                             <img

@@ -4,9 +4,10 @@
     position: relative;
     width: 100%;
     height: 500px;
-    background: #f1f1f1;
+    background: rgba(128, 128, 128, 0.075);
     margin: 0 auto;
     word-break: break-all;
+    
 
   }
   
@@ -14,14 +15,15 @@
     display: flex;
   }
   .tabs-but {
-  
     padding: 10px;
     text-align: center;
     width: 50%;
-    background: rgba(128, 128, 128, 0.075);
+    background: var(--primaryColor);
     cursor: pointer;
     border-bottom: 1px solid rgba(0, 0, 0, 0.274);
     box-sizing: content-box;
+    // border-top-left-radius: 10px;
+    // border-top-right-radius: 10px;
     position: relative;
     outline: none;
     &:not(:last-child){
@@ -31,19 +33,19 @@
   
   
   .active-tabs  {
-    background: white;
+    background: transparent;
     
  
   
-  &::before {
+  &::after {
     content: "";
     display: block;
     position: absolute;
-    top: -5px;
+    bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% + 2px);
-    height: 5px;
+    height: 2px;
     background: rgb(26,92,255);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -51,7 +53,8 @@
 }
 button {
     border: none;
-    font-weight: bolder;
+    color: rgb(26,92,255);
+    font-size: 1rem;
     
   }
   .content-tabs {

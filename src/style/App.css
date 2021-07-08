@@ -1,5 +1,6 @@
 :root {
   --primaryColor: #060d17;
+  --secondaryColor: #0a151f;
   --glowBlue: rgb(26,92,255);
   --textWhiteColor: #fff;
   --textPrimaryColor: #5a606b;
@@ -68,9 +69,23 @@ h3 {
 }
 
 h4 {
+  position: relative;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  padding-left: 5px;
   color: var(--textPrimaryColor);
+  margin: 8px 0;
+}
+
+h4::before {
+  content: '';
+  display: block;
+  height: 25px;
+  background-color: var(--glowBlue);
+  width: 2px;
+  position: absolute;
+  left: 0;
+  margin-right: 10px;
 }
 
 ul {
@@ -120,9 +135,6 @@ body.ReactModal__Overlay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   padding: 1rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -131,7 +143,7 @@ body.ReactModal__Overlay {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   background: -webkit-gradient(linear, left top, left bottom, from(black), to(rgba(0, 0, 0, 0)));
   background: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0) 100%);
 }
@@ -143,6 +155,7 @@ body.ReactModal__Overlay {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
 .header .title {
@@ -155,7 +168,7 @@ body.ReactModal__Overlay {
 
 @media screen and (max-width: 887px) {
   .header .title {
-    margin-right: 10px;
+    margin-right: 8px;
   }
 }
 
@@ -166,44 +179,63 @@ body.ReactModal__Overlay {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  max-width: 450px;
 }
 
-.header .search_container {
-  position: relative;
-  background-color: #353340;
+.header .header__right form {
+  width: 100%;
+  margin-right: 10px;
+}
+
+.header .header__right form .search_container {
+  border: 0.5px solid var(--textWhiteColor);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 250px;
-  height: 35px;
   border-radius: 8px;
   overflow: hidden;
-  -webkit-transition: .2s ease-in-out;
-  transition: .2s ease-in-out;
-  padding-left: 10px;
+  font-size: 1.25em;
+  position: relative;
+  width: 100%;
+  height: 25px;
+  -webkit-transition: width 450ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  transition: width 450ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  padding: 3px;
 }
 
-.header .search_container i {
-  font-size: 1.6rem;
-  margin-left: 7px;
-  margin-right: 5px;
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-}
-
-.header .search_container form input {
+.header .header__right form .search_container input {
+  border: 0;
+  padding: 0.25em 1em;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  outline: 0;
+  z-index: initial;
   position: absolute;
   top: 0;
-  background-color: #353340;
-  color: white;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
+  background: transparent;
+  color: white;
+  width: calc(100% - 70px);
+}
+
+.header .header__right form .search_container i {
+  font-size: 1.6rem;
+  margin-left: auto;
+  padding-top: 12px;
+  background: 0;
+  border: 0;
+  -webkit-transition: background 200ms ease-out;
+  transition: background 200ms ease-out;
+  width: 40px;
+  height: 40px;
+  color: white;
 }
 
 .header nav ul {
@@ -285,6 +317,12 @@ body.ReactModal__Overlay {
   }
 }
 
+.search__hide {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .hero__section {
   position: relative;
   background-image: url(../assets/images/VooduBg.jpg);
@@ -326,7 +364,7 @@ body.ReactModal__Overlay {
 }
 
 .hero__section .hero__container {
-  z-index: 2;
+  z-index: 1;
 }
 
 .hero__section .hero__container .hero__text {
@@ -451,6 +489,12 @@ body.ReactModal__Overlay {
 .slider::-webkit-scrollbar {
   width: 100%;
   height: 7px;
+}
+
+@media screen and (max-width: 836px) {
+  .slider::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .slider::-webkit-scrollbar-track {
@@ -631,6 +675,14 @@ body.ReactModal__Overlay {
   display: flex;
 }
 
+.movies__section__wrapper .movie__info__container ul li {
+  background-color: transparent;
+  border-radius: 100px;
+  border: 1px solid var(--textPrimaryColor);
+  padding: 3px 10px;
+  color: var(--textPrimaryColor);
+}
+
 .movies__section__wrapper .movie__info__container ul li:not(:last-child) {
   margin-right: 8px;
 }
@@ -767,7 +819,7 @@ body.ReactModal__Overlay {
 }
 
 .cast__container .cast__character {
-  font-size: .6rem;
+  font-size: .7rem;
   color: var(--textPrimaryColor);
 }
 
@@ -912,6 +964,12 @@ body.ReactModal__Overlay {
   }
 }
 
+.episode__wrapper .episode__container .episode__info .episode__number {
+  background-color: #0a151f;
+  padding: 2px;
+  width: 100%;
+}
+
 .movie__info__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -937,6 +995,7 @@ body.ReactModal__Overlay {
 }
 
 .search__section .search__results {
+  border-bottom: 1px solid var(--textPrimaryColor);
   margin-bottom: 18px;
   padding: 10px;
 }
@@ -1068,14 +1127,16 @@ body.ReactModal__Overlay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 20px 0px;
+  padding: 10px 0px;
+  background-color: var(--secondaryColor);
+  margin-bottom: 7px;
 }
 
 .movies__pages__section .tabs .tabs__container a {
   border: 1px solid var(--textPrimaryColor);
   border-radius: 25px;
   margin-right: 5px;
-  padding: 4px 7px;
+  padding: 4px 10px;
   font-size: 0.9rem;
   display: block;
 }
@@ -1157,7 +1218,7 @@ body.ReactModal__Overlay {
   position: relative;
   width: 100%;
   height: 500px;
-  background: #f1f1f1;
+  background: rgba(128, 128, 128, 0.075);
   margin: 0 auto;
   word-break: break-all;
 }
@@ -1172,7 +1233,7 @@ body.ReactModal__Overlay {
   padding: 10px;
   text-align: center;
   width: 50%;
-  background: rgba(128, 128, 128, 0.075);
+  background: var(--primaryColor);
   cursor: pointer;
   border-bottom: 1px solid rgba(0, 0, 0, 0.274);
   -webkit-box-sizing: content-box;
@@ -1186,19 +1247,19 @@ body.ReactModal__Overlay {
 }
 
 .active-tabs {
-  background: white;
+  background: transparent;
 }
 
-.active-tabs::before {
+.active-tabs::after {
   content: "";
   display: block;
   position: absolute;
-  top: -5px;
+  bottom: -5px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   width: calc(100% + 2px);
-  height: 5px;
+  height: 2px;
   background: #1a5cff;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -1206,7 +1267,8 @@ body.ReactModal__Overlay {
 
 button {
   border: none;
-  font-weight: bolder;
+  color: #1a5cff;
+  font-size: 1rem;
 }
 
 .content-tabs {

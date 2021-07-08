@@ -8,12 +8,14 @@
     .tabs {
         .tabs__container {
             display: flex;
-            padding: 20px 0px;
+            padding: 10px 0px;
+            background-color: var(--secondaryColor);
+            margin-bottom: 7px;
             a{
                 border: 1px solid var(--textPrimaryColor);
                 border-radius: 25px;
                 margin-right: 5px;
-                padding: 4px 7px;
+                padding: 4px 10px;
                 font-size: 0.9rem;
                 display: block;
                 

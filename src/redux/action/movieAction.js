@@ -64,7 +64,7 @@ export const fetchPopularTvShow = () =>{
 export const fetchSimilarMovies = (id) =>{
    return async function(dispatch) {
     const response = await axios.get(`/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`)
-    console.log(response.data.results)
+   
     dispatch({type: ActionTypes.FETCH_SIMILAR_MOVIES,
         payload: response.data.results})
    }
@@ -83,7 +83,7 @@ export const fetchMovieTrailer = (id) =>{
 export const fetchCast = (id) =>{
    return async function(dispatch) {
     const response = await axios.get(`/movie/${id}/credits?api_key=${API_KEY}`)
-   //  console.log(response.data.cast)
+    console.log(response)
     dispatch({type: ActionTypes.FETCH_CAST,
         payload: response.data.cast})
    }

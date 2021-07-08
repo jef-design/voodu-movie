@@ -58,6 +58,9 @@
     &::-webkit-scrollbar {
         width: 100%;
         height: 7px;
+        @media screen and (max-width: 836px) {
+            display: none;
+        }
       }
       
       /* Track */

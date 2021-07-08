@@ -29,7 +29,7 @@ function People() {
              <Helmet>
                 <title>Voodu | Popular People</title>
             </Helmet>
-            <h1>People</h1>
+            <h1>Popular People</h1>
             <p>{popularpeople.total_results}</p>
             
             <div className="movies__container">

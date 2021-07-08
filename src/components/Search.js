@@ -27,12 +27,13 @@ function Search() {
 
     return (
         <>
+        <form onSubmit={submitHandler} className="form-control">
         {/* <i className='bx bx-arrow-back search__hide'></i> */}
             <div
                 className="search_container"
-                style={{ width: isOpen ? "250px" : "" }}
+                // style={{ width: isOpen ? "250px" : "" }}
             >
-                <form onSubmit={submitHandler} className="form-control">
+                
                     <input
                         onChange={searchInputHandler}
                         className="text_search"
@@ -41,12 +42,13 @@ function Search() {
                         placeholder="Search Movies and TV Shows..."
                         value={searchInput}
                     />
-                </form>
+                
                 <i
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="bx bx-search"
+                    // onClick={() => setIsOpen(!isOpen)}
+                    className="bx bx-search search-icon"
                 ></i>
             </div>
+            </form>
         </>
     );
 }
