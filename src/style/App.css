@@ -679,7 +679,7 @@ body.ReactModal__Overlay {
   background-color: transparent;
   border-radius: 100px;
   border: 1px solid var(--textPrimaryColor);
-  padding: 3px 10px;
+  padding: 3px 8px;
   color: var(--textPrimaryColor);
 }
 

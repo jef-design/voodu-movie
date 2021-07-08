@@ -196,12 +196,14 @@ function TVshowInfo() {
                                         {TVCast}
                                     </div>
                                 </div>
-                                <h4>YOU MAY ALSO LIKE</h4>
-                                <div className="movies__container">
-                                    {SimilarMovies}
-                                </div>
+                                
+                                
                             </div>
                         </section>
+                        <h4 className="helper">YOU MAY ALSO LIKE</h4>
+                        <div className="movies__container helper" >
+                                    {SimilarMovies}
+                                </div>
                     </section>
                 );
             })}

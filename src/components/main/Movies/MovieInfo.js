@@ -230,11 +230,12 @@ function MovieInfo() {
                                     </div>
                                 </div>
                                 <h4>YOU MAY ALSO LIKE</h4>
-                                <div className="movies__container">
-                                    {SimilarMovies}
-                                </div>
+                                
                             </div>
                         </section>
+                        <div className="movies__container helper">
+                                    {SimilarMovies}
+                        </div>
                     </section>
                 );
             })}
