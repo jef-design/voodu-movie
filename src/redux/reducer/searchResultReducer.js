@@ -4,7 +4,7 @@ const defaultState = {
 
     movie: [],
     tv: [],
-    people: [],
+    people: []
     
 }
 

@@ -7,7 +7,6 @@ import PeopleCard from "../../../main/People/PeopleCard";
 function TabMovie() {
     const query = useSelector(state => state.searchedText.text);
     const peoples = useSelector(state => state.searchresult.people)
-    console.log(peoples)
     const dispatch = useDispatch();
 
  useEffect(() => {
@@ -16,7 +15,7 @@ function TabMovie() {
 
     return (
         <div className="search__movie__container">
-        {peoples.map((mov, index) => {
+        {peoples && peoples.map((mov, index) => {
                 const {
                     id,
                     name,
