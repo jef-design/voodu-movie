@@ -9,8 +9,12 @@
 }
 .skeleton.title{
     width: 50%;
-    height: 20px;
+    height: 30px;
     margin-bottom: 15px;
+}
+.skeleton.title-m{
+    width: 20%;
+    height: 15px;
 }
 .skeleton.person-image{
     margin-right: 5rem;

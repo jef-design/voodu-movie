@@ -14,6 +14,8 @@ import PeopleCard from "../People/PeopleCard";
 import TVshowCard from "../TVshows/TVshowCard";
 import SeasonCard from "../Season/SeasonCard";
 import { Helmet } from "react-helmet";
+import AlternativeMoviePoster from "../../../assets/images/AlternativeMoviePoster";
+import SkeletonElements from "../../common/Skeleton/SkeletonElements";
 
 
 function TVshowInfo() {
@@ -120,17 +122,22 @@ function TVshowInfo() {
                             )}
                         </div>
                         <div className="movie__info__container">
+                            {poster_path ? 
                             <img
-                                src={POSTERPATH_URL + poster_path}
-                                alt={name}
-                            />
+                            src={POSTERPATH_URL + poster_path}
+                            alt={name}
+                        /> : 
+                            <AlternativeMoviePoster></AlternativeMoviePoster>}
                             <div className="movie__info__wrapper">
-                                <h1>
-                                    {name} ({CurrentYear})
-                                </h1>
-
+                                   {/* <div className="movie__info__title"> */}
+                                   {name && CurrentYear ? <h1>{name} ({CurrentYear})</h1> 
+                                    : <SkeletonElements type="title" />}
+                                   {/* </div> */}
                                 <div className="tv__seasons">
-                                    <p className="movie__info__sub">{number_of_seasons} SEASONS</p>
+                                    <p className="movie__info__sub">
+                                        {number_of_seasons ? <p>{number_of_seasons} SEASONS</p>
+                                        : <SkeletonElements type="title-m" />}
+                                    </p>
                                     <div className="tv__seasons__slider">
                                         <div className="tv__slider__wrapper">
                                             {seasons.map((season,i) => {
@@ -148,7 +155,10 @@ function TVshowInfo() {
                                     </div>
                                 </div>
                                 <p className="movie__info__sub">SYPNOSIS</p>
-                                <p className="movie__info__text">{overview}</p>
+                                <p className="movie__info__text">
+                                    {overview ? <p>{overview}</p>
+                                    : <SkeletonElements type="text" /> }
+                                </p>
 
                                 <p className="movie__info__sub genre_title">
                                     GENRE

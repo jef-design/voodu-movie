@@ -16,7 +16,8 @@ import MovieCard from "./MovieCard";
 import PeopleCard from "../People/PeopleCard";
 import Modal from "react-modal";
 import { Helmet } from "react-helmet";
-import AlternativeImage from "../../../assets/images/AlternativeImage";
+import AlternativeMoviePoster from "../../../assets/images/AlternativeMoviePoster";
+import SkeletonElements from "../../common/Skeleton/SkeletonElements";
 
 function MovieInfo() {
     const { id } = useParams();
@@ -146,12 +147,13 @@ function MovieInfo() {
                                  alt={title}
                              />
                             ) : (
-                               <AlternativeImage></AlternativeImage>
+                               <AlternativeMoviePoster></AlternativeMoviePoster>
                             )}
                             <div>
-                                <h1>
+                                {title && CurrentYear ? <h1>
                                     {title} ({CurrentYear})
                                 </h1>
+                                : <SkeletonElements type="title" />}
                                 <div className="button__container">
                                     <button
                                         onClick={openModal}
