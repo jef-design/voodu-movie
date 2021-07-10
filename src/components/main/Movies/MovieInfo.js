@@ -16,6 +16,7 @@ import MovieCard from "./MovieCard";
 import PeopleCard from "../People/PeopleCard";
 import Modal from "react-modal";
 import { Helmet } from "react-helmet";
+import AlternativeImage from "../../../assets/images/AlternativeImage";
 
 function MovieInfo() {
     const { id } = useParams();
@@ -139,10 +140,14 @@ function MovieInfo() {
                             )}
                         </div>
                         <div className="movie__info__container">
-                            <img
-                                src={POSTERPATH_URL + poster_path}
-                                alt={title}
-                            />
+                            {poster_path ? (
+                                 <img
+                                 src={POSTERPATH_URL + poster_path}
+                                 alt={title}
+                             />
+                            ) : (
+                               <AlternativeImage></AlternativeImage>
+                            )}
                             <div>
                                 <h1>
                                     {title} ({CurrentYear})

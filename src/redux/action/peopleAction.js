@@ -9,12 +9,14 @@ const API_KEY = `5cffc0e248a2072bdedd8248f5d9f423`;
 export const fetchPopularPeople = (page) =>{
    return async function(dispatch) {
       dispatch({
-      type: ActionTypes.MOVIES_LOADING
+      type: ActionTypes.FETCH_IS_LOADING
       })
     const response = await axios.get(`person/popular?api_key=${API_KEY}&language=en-US&page=${page}`)
    
     dispatch({type: ActionTypes.FETCH_POPULAR_PEOPLE,
         payload: response.data.results})
+   dispatch({type: ActionTypes.FETCH_IS_SUCCESS
+        })
    }
 
 }
@@ -22,10 +24,15 @@ export const fetchPopularPeople = (page) =>{
 
 export const fetchPerson = (id) =>{
    return async function(dispatch) {
+      dispatch({
+         type: ActionTypes.FETCH_IS_LOADING
+         })
     const response = await axios.get(`/person/${id}?api_key=${API_KEY}`)
    //  console.log(response.data.cast)
     dispatch({type: ActionTypes.FETCH_PEOPLE,
         payload: response.data})
+        dispatch({type: ActionTypes.FETCH_IS_SUCCESS
+        })
    }
    
 }

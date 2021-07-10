@@ -1,9 +1,14 @@
 .movies__section__wrapper {
     .movie__info__backdrop {
         display: flex;
+        height: 600px;
+        @media screen and (max-width: 751px) {
+            height: 250px;
+        }
         img {
             width: 100%;
-            max-height: 600px;
+            max-height: 100%;
+            
         }
     }
     .movie__info__container {

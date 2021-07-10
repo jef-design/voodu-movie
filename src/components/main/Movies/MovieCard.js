@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import StarRatingComponent from "react-star-rating-component";
 import AlternativeImage from "../../../assets/images/AlternativeImage";
+import LazyLoad from "react-lazyload";
 
 function MovieCard({
     id,
@@ -27,7 +28,13 @@ function MovieCard({
             >
                 <div className="card">
                     {poster_path ? (
+                        <LazyLoad
+                        debounce={false}
+                        offsetVertical={500}
+                        height={200} once
+                      >
                         <img src={API_IMG + poster_path} alt="" />
+                        </LazyLoad>
                     ) : (
                         <AlternativeImage></AlternativeImage>
                     )}

@@ -52,7 +52,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .helper {
-  max-width: 1440px;
+  max-width: 1400px;
   margin: 0 auto;
   padding-right: .5rem;
   padding-left: .5rem;
@@ -584,15 +584,57 @@ body.ReactModal__Overlay {
   }
 }
 
+.button__view_all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2rem;
+}
+
+.button__view_all a {
+  background-color: var(--glowBlue);
+  font-size: 0.8rem;
+  color: #fff !important;
+  padding: 10px 35px;
+  border-radius: 10px;
+  border: none;
+  -webkit-transition: background-color 0.1s ease;
+  transition: background-color 0.1s ease;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-box-shadow: 0 10px 20px -10px #1a5cff;
+          box-shadow: 0 10px 20px -10px #1a5cff;
+  margin-bottom: 13px;
+}
+
+@media screen and (max-width: 836px) {
+  .button__view_all a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 .movies__section__wrapper .movie__info__backdrop {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 600px;
+}
+
+@media screen and (max-width: 751px) {
+  .movies__section__wrapper .movie__info__backdrop {
+    height: 250px;
+  }
 }
 
 .movies__section__wrapper .movie__info__backdrop img {
   width: 100%;
-  max-height: 600px;
+  max-height: 100%;
 }
 
 .movies__section__wrapper .movie__info__container {
@@ -1068,6 +1110,8 @@ body.ReactModal__Overlay {
 
 .person .peron__img {
   margin-right: 5rem;
+  min-width: 250px;
+  max-height: 300px;
   border-radius: 8px;
 }
 
@@ -1085,8 +1129,8 @@ body.ReactModal__Overlay {
 }
 
 .person .peron__img img {
-  min-width: 250px;
-  max-height: 300px;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
 }
 
@@ -1218,8 +1262,7 @@ body.ReactModal__Overlay {
           flex-direction: column;
   position: relative;
   width: 100%;
-  height: 500px;
-  background: rgba(128, 128, 128, 0.075);
+  background-color: var(--secondaryColor);
   margin: 0 auto;
   word-break: break-all;
 }
@@ -1228,12 +1271,13 @@ body.ReactModal__Overlay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 220px;
 }
 
 .tabs-but {
   padding: 10px;
   text-align: center;
-  width: 50%;
+  width: 100%;
   background: var(--primaryColor);
   cursor: pointer;
   border-bottom: 1px solid rgba(0, 0, 0, 0.274);
@@ -1249,6 +1293,7 @@ body.ReactModal__Overlay {
 
 .active-tabs {
   background: transparent;
+  color: var(--textWhiteColor);
 }
 
 .active-tabs::after {
@@ -1268,7 +1313,7 @@ body.ReactModal__Overlay {
 
 button {
   border: none;
-  color: #1a5cff;
+  color: var(--textPrimaryColor);
   font-size: 1rem;
 }
 
@@ -1296,8 +1341,8 @@ button {
 }
 
 .footer-top {
-  margin-top: 5rem;
-  margin-bottom: 3rem;
+  margin-top: 7rem;
+  margin-bottom: 5rem;
 }
 
 .footer-top h1 {
@@ -1320,7 +1365,7 @@ button {
 
 .footer {
   border-top: 3px solid var(--secondaryColor);
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
 .footer .footer-bottom {
@@ -1348,5 +1393,44 @@ button {
 .footer .footer-bottom .footer__menu li {
   margin-right: 10px;
   cursor: pointer;
+}
+
+.footer .footer-bottom .footer__tmdb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.footer .footer-bottom .footer__tmdb p {
+  white-space: nowrap;
+}
+
+.footer .footer-bottom .footer__tmdb img {
+  width: 100%;
+  height: 100%;
+  margin-left: 20px;
+}
+
+.footer .footer-bottom .footer__copy {
+  margin-top: 60px;
+}
+
+@media screen and (max-width: 375px) {
+  .footer .footer-bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 0px;
+  }
 }
 /*# sourceMappingURL=App.css.map */

@@ -4,6 +4,8 @@ import { fetchPerson, fetchPersonMovies, fetchPersonTVShows } from "../../../red
 import { useDispatch, useSelector } from "react-redux";
 import MovieCard from "../Movies/MovieCard";
 import TVshowCard from "../TVshows/TVshowCard";
+import SkeletonPersonInfo from '../../common/Skeleton/SkeletonPersonInfo'
+import SkeletonElements from "../../common/Skeleton/SkeletonElements";
 
 function People() {
     const { id } = useParams();
@@ -12,6 +14,7 @@ function People() {
     const person = useSelector(state => state.peopleReducer.person);
     const personmovies = useSelector(state => state.peopleReducer.personmovies);
     const persontv = useSelector(state => state.peopleReducer.persontvshows);
+    const loading = useSelector(state => state.miscLoading.loading)
 
     useEffect(() => {
         dispatch(fetchPerson(id));
@@ -46,50 +49,58 @@ function People() {
         );
     });
 
-    return (
-        <React.Fragment>
-            <div className="person">
-                {[person].map((c, index) => {
-                    const {
-                        profile_path,
-                        name,
-                        birthday,
-                        biography,
-                        place_of_birth,
-                        also_known_as,
-                    } = c;
-                    return (
-                        <React.Fragment key={index}>
-                            <div className="peron__img">
-                                <img
-                                    src={POSTERPATH_URL + profile_path}
-                                    alt=""
-                                />
-                            </div>
-                            <div className="person__details">
-                                <h2>{name}</h2>
-                                <p className="person__info">Biography</p>
-                                <p className="person__biography">{biography}</p>
-                                <p className="person__info">Also Known as</p>
-                                <p>{also_known_as}</p>
-                                <p className="person__info">Birthday</p>
-                                <p>{birthday}</p>
-                                <p className="person__info">Place of Birth</p>
-                                <p>{place_of_birth}</p>
-                            </div>
-                        </React.Fragment>
-                    );
-                })}
-            </div>
-            <div className="person__movies">
-            <h4>ALSO KNOWN FOR </h4>
-            <h2>MOVIES</h2>
-            <div className="movies__container">{PersonMovies}</div>
-            <h2>TV SERIES</h2>
-            <div className="movies__container">{PersonTV}</div>
-            </div>
-        </React.Fragment>
-    );
+if(loading){
+        return (
+            <SkeletonPersonInfo />
+          )
+}
+    else{
+        return (
+            <React.Fragment>
+                <div className="person">
+                    {[person].map((c, index) => {
+                        const {
+                            profile_path,
+                            name,
+                            birthday,
+                            biography,
+                            place_of_birth,
+                            also_known_as,
+                        } = c;
+                        return (
+                            <React.Fragment key={index}>
+                                <SkeletonElements/>
+                                <div className="peron__img">
+                                    <img
+                                        src={POSTERPATH_URL + profile_path}
+                                        alt=""
+                                    />
+                                </div>
+                                <div className="person__details">
+                                    <h2>{name}</h2>
+                                    <p className="person__info">Biography</p>
+                                    <p className="person__biography">{biography}</p>
+                                    <p className="person__info">Also Known as</p>
+                                    <p>{also_known_as}</p>
+                                    <p className="person__info">Birthday</p>
+                                    <p>{birthday}</p>
+                                    <p className="person__info">Place of Birth</p>
+                                    <p>{place_of_birth}</p>
+                                </div>
+                            </React.Fragment>
+                        );
+                    })}
+                </div>
+                <div className="person__movies">
+                <h4>ALSO KNOWN FOR </h4>
+                <h2>MOVIES</h2>
+                <div className="movies__container">{PersonMovies}</div>
+                <h2>TV SERIES</h2>
+                <div className="movies__container">{PersonTV}</div>
+                </div>
+            </React.Fragment>
+        );
+    }
 }
 
 export default People;

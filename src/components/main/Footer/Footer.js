@@ -1,4 +1,5 @@
 import React from "react";
+import tmdblogo from '../../../assets/images/tmdb.svg'
 
 function Footer() {
     return (
@@ -21,6 +22,10 @@ function Footer() {
                         <p>
                             Voo<span>du.</span>{" "}
                         </p>
+                        <div className="footer__tmdb">
+                            <p>Powered by</p>
+                            <img src={tmdblogo} alt="tmdblogo" />
+                        </div>
                         <ul className="footer__menu">
                             <li>Donation</li>
                             <li>Privacy Policy</li>
@@ -28,7 +33,7 @@ function Footer() {
                         </ul>
                         
                     </div>
-                    <div>
+                    <div className="footer__copy">
                     <p>&copy; 2020 Voodu</p>
                     <p>Created by: Jeff Bermejo</p>
                     </div>

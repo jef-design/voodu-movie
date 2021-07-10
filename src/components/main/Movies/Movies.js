@@ -2,9 +2,12 @@ import React, { useEffect } from "react";
 import {
     fetchNowPlayingMovies,
     fetchTopRatedMovies,
+    fetchPopularTvShow
 } from "../../../redux/action/movieAction";
+// import {fetchPop} from '../../../redux/action/tvshowAction'
 import { useDispatch, useSelector } from "react-redux";
 import MovieCard from "./MovieCard";
+import TVshowCard from '../../main/TVshows/TVshowCard'
 import StarRatingComponent from "react-star-rating-component";
 import { Link } from "react-router-dom";
 
@@ -13,10 +16,12 @@ function Movies() {
     const dispatch = useDispatch();
     const toprated = useSelector(state => state.fetchmovies.movies);
     const nowplaying = useSelector(state => state.fetchmovies.NWmovies);
+    const populartv = useSelector(state => state.fetchmovies.Ptvshow);
 
     useEffect(() => {
         dispatch(fetchTopRatedMovies());
         dispatch(fetchNowPlayingMovies());
+        dispatch(fetchPopularTvShow());
     }, [dispatch]);
     // console.log("top rated", toprated);
 
@@ -56,18 +61,50 @@ function Movies() {
             />
         );
     });
+    const PopularTvSection = populartv.map((movie, index) => {
+        const { id, poster_path, name, vote_average, first_air_date } = movie;
+        return (
+            <TVshowCard
+                id={id}
+                key={index}
+                name={name}
+                poster_path={poster_path}
+                first_air_date={first_air_date}
+                vote_average={vote_average}
+            />
+        );
+    });
     return (
         <section className="movies__section helper">
             <section>
                 <h3>Top Rated Movies</h3>
                 <div className="slider">
-                    <div className="slider__wrapper">{topRatedSection}</div>
+                    <div className="slider__wrapper">{topRatedSection}<div className="button__view_all">
+                    <Link to="/movie/toprated">
+                    VIEW ALL
+                    </Link>
+                </div></div>
+                    
                 </div>
             </section>
 
             <section>
                 <h3>Now Playing Movies</h3>
                 <div className="movies__container">{NowPLayingSection}</div>
+                <div className="button__view_all">
+                    <Link to="/movie/popular">
+                    VIEW ALL
+                    </Link>
+                </div>
+            </section>
+            <section>
+                <h3>Popular TV Shows</h3>
+                <div className="movies__container">{PopularTvSection}</div>
+                <div className="button__view_all">
+                    <Link to="/tv/popular">
+                    VIEW ALL
+                    </Link>
+                </div>
             </section>
         </section>
     );
