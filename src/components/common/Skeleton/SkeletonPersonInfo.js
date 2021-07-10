@@ -11,7 +11,6 @@ const SkeletonPersonInfo = () => {
                 <SkeletonElements type="title" />
                 <SkeletonElements type="text" />
             </div>
-            <h1>LOADING HATOP</h1>
         </section>
     );
 };
