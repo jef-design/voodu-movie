@@ -1283,7 +1283,7 @@ body.ReactModal__Overlay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 220px;
+  width: 300px;
 }
 
 .tabs-but {

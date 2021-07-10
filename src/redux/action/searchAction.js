@@ -21,4 +21,14 @@ export const searchedMovie = (query) =>{
     }
  
  }
+ export const searchedPeople = (query) =>{
+    return async function(dispatch) {
+     const response = await axios.get(request.searchedPeople+query)
+     console.log(response.data.results)
+     dispatch({type: ActionTypes.SEARCHED_PEOPLE,
+         payload: response.data.results})
+    }
+ 
+ }
+
 

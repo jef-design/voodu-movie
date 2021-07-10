@@ -4,6 +4,7 @@ const defaultState = {
 
     movie: [],
     tv: [],
+    people: [],
     
 }
 
@@ -13,6 +14,8 @@ const searchResultReducer = (state = defaultState, {type, payload}) => {
             return { ...state, movie: payload };
         case ActionTypes.SEARCHED_TV:
             return { ...state, tv: payload };
+        case ActionTypes.SEARCHED_PEOPLE:
+            return { ...state, people: payload };
                
         default:
             return state;

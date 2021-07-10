@@ -1,6 +1,8 @@
 import { useState } from "react";
 import TabMovie from '../views/search/SearchTabs/TabMovie'
 import TabTv from '../views/search/SearchTabs/TabTv'
+import TabPeople from '../views/search/SearchTabs/TabPeople'
+
 function Tabs() {
   const [toggleState, setToggleState] = useState(1);
 
@@ -23,12 +25,12 @@ function Tabs() {
         >
           TV Shows
         </button>
-        {/* <button
-          className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+        <button
+          className={toggleState === 3 ? "tabs-but active-tabs" : "tabs-but"}
           onClick={() => toggleTab(3)}
         >
           People
-        </button> */}
+        </button>
       </div>
 
       <div className="content-tabs">
@@ -45,6 +47,12 @@ function Tabs() {
 
 
           <TabTv/>
+        </div>
+
+        <div
+          className={toggleState === 3 ? "content  active-content" : "content"}
+        >
+          <TabPeople/>
         </div>
 
       </div>

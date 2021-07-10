@@ -17,5 +17,6 @@ const request = {
             fetchGenreListTV: `genre/tv/list?api_key=${API_KEY}&language=en-US`,
             searchedMovie: `search/movie?api_key=${API_KEY}&query=`,
             searchedTVShow: `search/tv?api_key=${API_KEY}&query=`,
+            searchedPeople: `search/person?api_key=${API_KEY}&query=`,
 }
 export default request;
