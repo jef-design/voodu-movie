@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPopularPeople } from "../../redux/action/peopleAction";
-import PeopleCard from "../main/People/PeopleCard";
+import { fetchPopularPeople } from "../../../redux/action/peopleAction";
+import PeopleCard from "../../main/People/PeopleCard";
 import { Helmet } from "react-helmet";
 import Skeleton from "react-loading-skeleton";
-import SkeletonElements from "../common/Skeleton/SkeletonElements";
-import SkeletonPeople from "../common/Skeleton/SkeletonPeoples";
+import SkeletonElements from "../../common/Skeleton/SkeletonElements";
+import SkeletonPeople from "../../common/Skeleton/SkeletonPeoples";
 
 
 
@@ -24,13 +24,6 @@ function People() {
     //     dispatch(fetchPopularPeople(page));
     //     setPage(page => page + 1);
     // };
-//     if(loading){
-//         return (
-//             <SkeletonPeople/>
-            
-//           )
-// }
-//     else{
         return (
             <section className="movies__pages__section">
                  <Helmet>

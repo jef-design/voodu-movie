@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import StarRatingComponent from "react-star-rating-component";
 import AlternativeImage from "../../../assets/images/AlternativeImage";
 import LazyLoad from "react-lazyload";
+import AlternativeMoviePoster from "../../../assets/images/AlternativeMoviePoster";
 
 function MovieCard({
     id,
@@ -36,7 +37,7 @@ function MovieCard({
                         <img src={API_IMG + poster_path} alt="" />
                         </LazyLoad>
                     ) : (
-                        <AlternativeImage></AlternativeImage>
+                        <AlternativeMoviePoster></AlternativeMoviePoster>
                     )}
                     <p className="card__title">
                         {name} {title} ({CurrentYear})

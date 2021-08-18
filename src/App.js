@@ -1,20 +1,21 @@
 import React from "react";
 import "./style/App.css";
-import Header from "./components/Header";
+import Header from "./components/main/Header/Header";
 import { Router, Switch, Route } from "react-router-dom";
 import MovieInfo from "./components/main/Movies/MovieInfo";
-import Home from "./components/pages/Home";
+import Home from "./components/pages/Home/Home";
 import Footer from "./components/main/Footer/Footer";
 // import SearchResults from "./components/SearchResults";
 import People from "./components/main/People/People";
 import TVshows from "./components/pages/TVshow/TVshows";
-import Peoples from "./components/pages/Peoples";
+import Peoples from "./components/pages/People/Peoples";
 import MoviesContainer from "./components/pages/Movies/MoviesContainer";
 import TvShowContainer from './components/pages/TVshow/TvShowContainer'
 import TVshowInfo from "./components/main/TVshows/TVshowInfo";
 import Episodes from "./components/main/Episodes/Episodes";
 import SearchContainer from "./components/views/search/SearchContainer";
 import { createBrowserHistory } from "history";
+
 
 const history = createBrowserHistory();
 

@@ -1,4 +1,4 @@
-const API_KEY = `5cffc0e248a2072bdedd8248f5d9f423`
+const API_KEY = process.env.REACT_APP_API_KEY
 
 const request = {
             fetchTopRatedMovies:  `movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`,

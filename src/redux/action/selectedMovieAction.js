@@ -1,7 +1,7 @@
 import { ActionTypes} from '../constants/types';
 import axios from '../../api/axios';
 
-const API_KEY = `5cffc0e248a2072bdedd8248f5d9f423`;
+const API_KEY = process.env.REACT_APP_API_KEY
 
 
 export const selectedMovie = (id) =>{

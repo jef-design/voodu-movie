@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import StarRatingComponent from "react-star-rating-component";
-import AlternativeImage from "../../../assets/images/AlternativeImage";
+import AlternativeMoviePoster from "../../../assets/images/AlternativeMoviePoster";
 
 function TVshowCard({
     id,
@@ -27,7 +27,7 @@ function TVshowCard({
                     {poster_path ? (
                         <img src={API_IMG + poster_path} alt="" />
                     ) : (
-                        <AlternativeImage></AlternativeImage>
+                        <AlternativeMoviePoster></AlternativeMoviePoster>
                     )}
                     <p className="card__title">
                         {name} ({CurrentYear})

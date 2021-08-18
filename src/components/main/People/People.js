@@ -4,8 +4,7 @@ import { fetchPerson, fetchPersonMovies, fetchPersonTVShows } from "../../../red
 import { useDispatch, useSelector } from "react-redux";
 import MovieCard from "../Movies/MovieCard";
 import TVshowCard from "../TVshows/TVshowCard";
-import SkeletonPersonInfo from '../../common/Skeleton/SkeletonPersonInfo'
-import SkeletonElements from "../../common/Skeleton/SkeletonElements";
+import AlternativeMoviePoster from "../../../assets/images/AlternativeMoviePoster";
 
 function People() {
     const { id } = useParams();
@@ -49,12 +48,6 @@ function People() {
         );
     });
 
-if(loading){
-        return (
-            <SkeletonPersonInfo />
-          )
-}
-    else{
         return (
             <React.Fragment>
                 <div className="person">
@@ -69,12 +62,15 @@ if(loading){
                         } = c;
                         return (
                             <React.Fragment key={index}>
-                                <SkeletonElements/>
                                 <div className="peron__img">
-                                    <img
-                                        src={POSTERPATH_URL + profile_path}
-                                        alt=""
-                                    />
+                                {profile_path && profile_path ? (
+                                 <img
+                                 src={POSTERPATH_URL + profile_path}
+                                 alt={name}
+                             />
+                            ) : (
+                               <AlternativeMoviePoster></AlternativeMoviePoster>
+                            )}
                                 </div>
                                 <div className="person__details">
                                     <h2>{name}</h2>
@@ -100,7 +96,7 @@ if(loading){
                 </div>
             </React.Fragment>
         );
-    }
+    
 }
 
 export default People;

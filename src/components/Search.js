@@ -3,14 +3,14 @@ import { useDispatch } from "react-redux";
 import { withRouter, useHistory } from "react-router-dom";
 import { searchedText} from "../redux/action/movieAction";
 
-function Search() {
+function Search({activeSearch}) {
 
     const [searchInput, setSearchInput] = useState("");
     const [isOpen, setIsOpen] = useState(false);
     const history = useHistory();
     const dispatch = useDispatch();
     const searchInputRef = useRef();
-
+  
     const searchInputHandler = e => {
         setSearchInput(e.target.value);
       
@@ -28,12 +28,10 @@ function Search() {
     return (
         <>
         <form onSubmit={submitHandler} className="form-control">
-        {/* <i className='bx bx-arrow-back search__hide'></i> */}
+        {/* <i className='bx bx-arrow-back search__hide' ></i> */}
             <div
                 className="search_container"
-                // style={{ width: isOpen ? "250px" : "" }}
             >
-                
                     <input
                         onChange={searchInputHandler}
                         className="text_search"
@@ -44,7 +42,6 @@ function Search() {
                     />
                 
                 <i
-                    // onClick={() => setIsOpen(!isOpen)}
                     className="bx bx-search search-icon"
                 ></i>
             </div>
