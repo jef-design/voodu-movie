@@ -25,7 +25,7 @@ function Movies() {
     }, [dispatch]);
     // console.log("top rated", toprated);
 
-    const topRatedSection = toprated.map((movie, index) => {
+    const topRatedSection = toprated && toprated.map((movie, index) => {
         const { id, backdrop_path, title, vote_average } = movie;
         return (
             <div className="card" key={index}>
@@ -48,20 +48,21 @@ function Movies() {
         );
     });
 
-    const NowPLayingSection = nowplaying.map((movie, index) => {
-        const { id, poster_path, title, vote_average, release_date } = movie;
-        return (
-            <MovieCard
-                id={id}
-                key={index}
-                title={title}
-                poster_path={poster_path}
-                release_date={release_date}
-                vote_average={vote_average}
-            />
-        );
-    });
-    const PopularTvSection = populartv.map((movie, index) => {
+    const NowPLayingSection = nowplaying && nowplaying.map((movie, index) => {
+            const { id, poster_path, title, vote_average, release_date } = movie;
+            return (
+                <MovieCard
+                    id={id}
+                    key={index}
+                    title={title}
+                    poster_path={poster_path}
+                    release_date={release_date}
+                    vote_average={vote_average}
+                />
+            );
+        });
+    
+    const PopularTvSection = populartv && populartv.map((movie, index) => {
         const { id, poster_path, name, vote_average, first_air_date } = movie;
         return (
             <TVshowCard

@@ -37,7 +37,7 @@ function EpisodeCard({
             <div className="episode__stillpath">
                 <img src={POSTERPATH_URL + still_path} alt={name} />
                 <i
-                    // onClick={openModal}
+                    onClick={openModal}
                     className="bx bx-play-circle play__button"
                 ></i>
             </div>
@@ -59,7 +59,7 @@ function EpisodeCard({
                 <iframe
                     title="stream"
                     className="iframe__wrapper"
-                    src={` https:///tmdb/tv?id=${id}&s=${season_number}&e=${episode_number}`}
+                    src={`https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=${season_number}&e=${episode_number}`}
                     frameBorder="0"
                     scrolling="no"
                     allowFullScreen={true}

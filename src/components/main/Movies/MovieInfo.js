@@ -158,7 +158,7 @@ function MovieInfo() {
                                     <button
                                         onClick={openModal}
                                         className="play_button"
-                                        disabled
+                                        // disabled
                                     >
                                         <i className="bx bx-play"></i>Play
                                     </button>
@@ -178,7 +178,7 @@ function MovieInfo() {
                                         <iframe
                                             title="stream"
                                             className="iframe__wrapper"
-                                            src={`https://tmdb/movie?id=${id}`}
+                                            src={`https://www.2embed.ru/embed/tmdb/movie?id=${id}`}
                                             frameBorder="0"
                                             scrolling="no"
                                             allowFullScreen={true}
