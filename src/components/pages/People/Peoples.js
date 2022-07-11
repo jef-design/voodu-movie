@@ -10,9 +10,9 @@ import SkeletonPeople from "../../common/Skeleton/SkeletonPeoples";
 
 
 function People() {
-    const popularpeople = useSelector(state => state.fetchmovies.popularpeople);
+    const popularpeople = useSelector(state => state.peopleReducer.popularpeople);
     const loading = useSelector(state => state.miscLoading.loading)
-
+    console.log(popularpeople)
     const [page, setPage] = useState(1);
     const dispatch = useDispatch();
 
@@ -30,7 +30,7 @@ function People() {
                     <title>Voodu | Popular People</title>
                 </Helmet>
                 <h1>Popular People</h1>
-                <p>{popularpeople.total_results}</p>
+                {/* <p>{popularpeople.total_results}</p> */}
                 
                 <div className="movies__container">
                     {popularpeople.map((movie, index) => {
