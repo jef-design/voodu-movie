@@ -40,7 +40,8 @@ function MovieInfo() {
             left: "0",
             right: "0",
             bottom: "0",
-            padding: "0",
+            padding: "80",
+            border: "none",
             overflow: "hidden",
         },
     };
