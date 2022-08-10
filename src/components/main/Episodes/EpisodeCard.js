@@ -60,8 +60,8 @@ function EpisodeCard({
                 <iframe
                     title="stream"
                     className="iframe__wrapper"
-                    src={` https://2embed.org/embed/series?tmdb=${id}&sea=${season_number}&epi=${episode_number}`}
-                    // src={`https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=${season_number}&e=${episode_number}`}
+                    // src={` https://2embed.org/embed/series?tmdb=${id}&sea=${season_number}&epi=${episode_number}`}
+                    src={`https://www.2embed.to/embed/tmdb/tv?id=${id}&s=${season_number}&e=${episode_number}`}
                     frameBorder="0"
                     scrolling="no"
                     allowFullScreen={true}

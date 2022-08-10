@@ -179,8 +179,8 @@ function MovieInfo() {
                                         <iframe
                                             title="stream"
                                             className="iframe__wrapper"
-                                            src={`https://2embed.org/embed/movie?tmdb=${id}`}
-                                            // src={`https://www.2embed.ru/embed/tmdb/movie?id=${id}`}
+                                            // src={`https://2embed.org/embed/movie?tmdb=${id}`}
+                                            src={`https://www.2embed.to/embed/tmdb/movie?id=${id}`}
                                             frameBorder="0"
                                             scrolling="no"
                                             allowFullScreen={true}
